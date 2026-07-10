@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 exports.handler = async (event, context) => {
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Method Not Allowed" };
@@ -33,7 +31,16 @@ exports.handler = async (event, context) => {
             }]
         };
 
-        await axios.post(webhookUrl, payload);
+        // Forward safely from backend to Discord using native fetch
+        const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Discord API responded with status ${response.status}`);
+        }
 
         return {
             statusCode: 200,

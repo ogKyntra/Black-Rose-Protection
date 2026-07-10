@@ -1,5 +1,3 @@
-const axios = require('axios'); // Note: Netlify handles bundling, or you can use native fetch if using Node 18+
-
 exports.handler = async (event, context) => {
     // Only allow POST requests
     if (event.httpMethod !== "POST") {
@@ -38,8 +36,16 @@ exports.handler = async (event, context) => {
             }]
         };
 
-        // Forward safely from backend to Discord
-        await axios.post(webhookUrl, payload);
+        // Forward safely from backend to Discord using native fetch
+        const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Discord API responded with status ${response.status}`);
+        }
 
         return {
             statusCode: 200,
