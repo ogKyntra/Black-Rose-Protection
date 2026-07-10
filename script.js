@@ -38,7 +38,7 @@ function formatMoney(amount) { return new Intl.NumberFormat('en-US', { style: 'c
 // CLOUD STATE MANAGEMENT
 // ==========================================
 let CLOUD_STATE = { siteData: null, requests: [], apps: [] };
-let ADMIN_PASSCODE = ""; // Keep this simple for RP, not enterprise security
+let ADMIN_PASSCODE = "blackrose"; // Keep this simple for RP, not enterprise security
 
 // Inject Admin Notes Dynamically
 document.addEventListener("DOMContentLoaded", () => {
