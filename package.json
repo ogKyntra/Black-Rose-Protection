@@ -2,6 +2,6 @@
   "name": "black-rose-protection",
   "version": "1.0.0",
   "dependencies": {
-    "@netlify/blobs": "^7.9.0"
+    "@netlify/blobs": "latest"
   }
 }
