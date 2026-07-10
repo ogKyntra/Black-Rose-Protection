@@ -9,7 +9,7 @@ exports.handler = async (event) => {
         connectLambda(event);
         const store = getStore("brp_database");
         
-        let apps = (await store.get("apps", { type: "json", consistency: "strong" })) || [];
+        let apps = (await store.get("apps", { type: "json" })) || [];
         apps.push(data);
         await store.setJSON("apps", apps);
 

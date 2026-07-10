@@ -4,7 +4,7 @@ exports.handler = async (event) => {
     try {
         connectLambda(event);
         const store = getStore("brp_database");
-        const data = await store.get("siteData", { type: "json", consistency: "strong" });
+        const data = await store.get("siteData", { type: "json" });
         
         // Returns null if the database is empty, telling the frontend to use defaults
         return {

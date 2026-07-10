@@ -10,7 +10,7 @@ exports.handler = async (event) => {
         const store = getStore("brp_database");
         
         // Append to Blobs
-        let requests = (await store.get("requests", { type: "json", consistency: "strong" })) || [];
+        let requests = (await store.get("requests", { type: "json" })) || [];
         requests.push(data);
         await store.setJSON("requests", requests);
 
