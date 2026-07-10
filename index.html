@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Rose Protection | Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+
+    <nav>
+        <div class="nav-brand">
+            <span class="logo-main">BLACK ROSE</span>
+            <span class="logo-sub">PROTECTION // SYSTEM ONLINE</span>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#estimator">Estimator</a>
+            <a href="#roster">Roster</a>
+            <a href="#apply" class="nav-link-sub">Apply</a>
+            <a href="https://discord.gg/5hyT2CcJCD" target="_blank" class="btn-cyber-outline" style="margin-right: 10px;">Discord</a>
+            <a href="#request" class="btn-cyber-primary">Request Protection</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="cyber-grid"></div>
+        <div class="hero-content">
+            <div class="system-status"><span class="pulse"></span> PROTECTION NETWORK ACTIVE</div>
+            <h1 class="glitch" data-text="BLACK ROSE PROTECTION">BLACK ROSE PROTECTION</h1>
+            <p class="tagline">Protecting what matters, with precision and loyalty.</p>
+            <p class="intro">Elite private protection, business security, event coverage, and high-risk transport for clients who need loyalty, discretion, and control.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-cyber-secondary">View Services</a>
+                <a href="#request" class="btn-cyber-primary">Request Protection</a>
+                <a href="#apply" class="btn-cyber-outline">Apply Now</a>
+                <a href="https://discord.gg/5hyT2CcJCD" target="_blank" class="btn-cyber-outline">Join Discord</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container fade-in" style="margin-top: -80px; position: relative; z-index: 10;">
+        <div class="grid-4 info-cards">
+            <div class="cyber-card-small"><div class="card-status">ACTIVE</div><h4>Private Security</h4><p>Discreet protection for individuals, businesses, and events.</p></div>
+            <div class="cyber-card-small"><div class="card-status">SECURE</div><h4>High-Risk Transport</h4><p>Controlled movement for valuable clients, cargo, and sensitive situations.</p></div>
+            <div class="cyber-card-small"><div class="card-status">READY</div><h4>Business Patrols</h4><p>Visible security presence for venues, stores, and private property.</p></div>
+            <div class="cyber-card-small"><div class="card-status">STANDBY</div><h4>Contract Detail</h4><p>Custom protection plans built around risk, time, and staffing.</p></div>
+        </div>
+    </section>
+
+    <section id="about" class="container fade-in">
+        <div class="section-header">
+            <h2>ABOUT THE OPERATION</h2>
+            <span class="cyber-subtext">// SYS.DIR: ROXY ROSE</span>
+        </div>
+        <div class="cyber-panel">
+            <div class="panel-corners"></div>
+            <p>Founded by Roxy Rose, <strong>Black Rose Protection</strong> operates on four core pillars: loyalty, precision, discretion, and trust. We understand that standard security is often not enough.</p>
+            <p>Whether you require a quiet executive detail, heavily armed high-risk transport, or long-term venue security, our operatives are trained to handle volatile situations with absolute professionalism. We do not just react to threats; we neutralize them before they materialize.</p>
+        </div>
+    </section>
+
+    <section id="services" class="container fade-in">
+        <div class="section-header">
+            <h2>SERVICES AVAILABLE</h2>
+            <span class="cyber-subtext">// OPERATIONAL COVERAGE</span>
+        </div>
+        <div id="services-grid" class="grid-4"></div>
+    </section>
+
+    <section id="estimator" class="container fade-in">
+        <div class="section-header">
+            <h2>CONTRACT COST ESTIMATOR</h2>
+            <span class="cyber-subtext">// DYNAMIC PRICING MODEL</span>
+        </div>
+        <div class="cyber-panel">
+            <div class="panel-corners"></div>
+            <p style="font-size: 1.1rem;">Black Rose Protection contracts are calculated by staffing, time, risk level, vehicle needs, and selected add-ons. The final price may be adjusted depending on risk, location, fuel, equipment, ammunition, repairs, and emergency requirements.</p>
+            <a href="#request" class="btn-cyber-primary" style="margin-top: 1rem;">[ CONFIGURE CONTRACT ]</a>
+        </div>
+    </section>
+
+    <section id="roster" class="container fade-in">
+        <div class="section-header">
+            <h2>ACTIVE ROSTER</h2>
+            <span class="cyber-subtext">// PERSONNEL DATABASE</span>
+        </div>
+        <div id="roster-grid" class="grid-4"></div>
+    </section>
+
+    <div class="forms-container fade-in">
+        <section id="request" class="container">
+            <div class="section-header">
+                <h2>REQUEST PROTECTION</h2>
+                <span class="cyber-subtext">// CONTRACT REQUEST TERMINAL</span>
+            </div>
+            <div class="grid-2">
+                <div class="cyber-panel">
+                    <div class="panel-corners"></div>
+                    <form id="requestForm" class="brp-form">
+                        <div class="form-group">
+                            <input type="text" id="reqName" placeholder="Full Name" required>
+                            <input type="tel" id="reqPhone" placeholder="Phone Number" required>
+                        </div>
+                        <input type="text" id="reqBusiness" placeholder="Business / Organisation Name (Optional)">
+                        <div class="form-group">
+                            <input type="text" id="reqService" placeholder="Service Needed" required>
+                            <input type="date" id="reqDate" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="time" id="reqTime" required>
+                            <input type="number" id="reqDuration" placeholder="Expected Duration (Hours)" step="0.5" min="1" required>
+                        </div>
+                        <input type="text" id="reqLocation" placeholder="Location" required>
+                        <div class="form-group">
+                            <select id="reqStaff" required>
+                                <option value="" disabled selected>Loading available personnel...</option>
+                            </select>
+                            <select id="reqVehicle">
+                                <option value="Unsure">Vehicle Support: Unsure</option>
+                                <option value="Yes">Yes, Marked Security Vehicle</option>
+                                <option value="No">No Vehicle Needed</option>
+                            </select>
+                        </div>
+                        <select id="reqRisk" required>
+                            <option value="" disabled selected>Select Risk Level</option>
+                            <option value="Low">Low Risk</option>
+                            <option value="Medium">Medium Risk</option>
+                            <option value="High">High Risk</option>
+                            <option value="Unknown">Unknown Risk</option>
+                        </select>
+                        
+                        <div class="form-section-label" style="color:var(--crimson); font-weight:bold; margin-top:10px;">OPERATIONAL ADD-ONS</div>
+                        <div id="reqAddonsContainer" class="addon-grid">
+                            </div>
+
+                        <textarea id="reqDetails" rows="3" placeholder="Extra Details / Threat Intelligence"></textarea>
+                        <input type="text" id="reqContactPref" placeholder="Preferred Contact Method (e.g., SMS, Email, In-City Radio)" required>
+                        
+                        <button type="submit" class="btn-cyber-primary full-width">[ TRANSMIT CONTRACT REQUEST ]</button>
+                        <div id="reqStatus" class="form-status"></div>
+                    </form>
+                </div>
+                
+                <div class="cyber-panel calculator-panel">
+                    <div class="panel-corners"></div>
+                    <h3 style="color:var(--crimson); border-bottom:1px solid #333; padding-bottom:10px; margin-bottom:15px;">ESTIMATED CONTRACT COST</h3>
+                    <div id="calcBreakdown" class="calc-breakdown">
+                        <div class="calc-row"><span>Base Operation Fee:</span> <span id="calcBase">$0</span></div>
+                        <div class="calc-row"><span>Employee Cost:</span> <span id="calcEmpCost">$0</span></div>
+                        <div class="calc-row"><span>Risk Assessment Fee:</span> <span id="calcRisk">$0</span></div>
+                        <div class="calc-row"><span>Logistical Add-ons:</span> <span id="calcAddons">$0</span></div>
+                    </div>
+                    <div class="calc-total-box">
+                        <div style="font-size:0.9rem; color:var(--text-dim);">TOTAL ESTIMATE</div>
+                        <div id="calcTotal" class="calc-total-price">$0</div>
+                    </div>
+                    <p class="cyber-subtext" style="font-size:0.75rem; text-align:center; margin-top:15px;">> Estimate only. Final price may change depending on risk, travel, staffing, equipment, ammunition, fuel, repairs, and contract conditions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="apply" class="container fade-in">
+            <div class="section-header">
+                <h2>JOIN BLACK ROSE</h2>
+                <span class="cyber-subtext">// RECRUITMENT INTAKE</span>
+            </div>
+            <div class="cyber-panel" style="max-width:800px; margin:0 auto;">
+                <div class="panel-corners"></div>
+                <form id="applyForm" class="brp-form">
+                    <div class="form-group">
+                        <input type="text" id="appName" placeholder="Full Name" required>
+                        <input type="tel" id="appPhone" placeholder="Phone Number" required>
+                    </div>
+                    <textarea id="appExp" rows="2" placeholder="Previous Experience" required></textarea>
+                    <textarea id="appWhy" rows="2" placeholder="Why do you want to join Black Rose Protection?" required></textarea>
+                    <input type="text" id="appAvailability" placeholder="General Availability" required>
+                    <div class="form-group">
+                        <input type="text" id="appStrengths" placeholder="Your Strengths" required>
+                        <input type="text" id="appWeaknesses" placeholder="Your Weaknesses" required>
+                    </div>
+                    <input type="text" id="appRole" placeholder="Preferred Role (e.g., Driver, Close Protection, Patrol)" required>
+                    <select id="appHighRisk" required>
+                        <option value="" disabled selected>Comfortable with high-risk armed protection?</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+
+                    <button type="submit" class="btn-cyber-secondary full-width">[ SUBMIT APPLICATION ]</button>
+                    <div id="appStatus" class="form-status"></div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div style="margin-bottom: 2rem;">
+            <a href="https://discord.gg/5hyT2CcJCD" target="_blank" class="btn-cyber-outline" style="padding: 0.5rem 1rem;">[ JOIN DISCORD ]</a>
+        </div>
+        <p>&copy; <span id="year"></span> BLACK ROSE PROTECTION // SECURE CONNECTION</p>
+        <button id="openAdminBtn" class="admin-link">[ STAFF LOGIN ]</button>
+    </footer>
+
+    <div id="adminModal" class="modal">
+        <div class="modal-content cyber-panel">
+            <div class="panel-corners"></div>
+            <span class="close-btn">&times;</span>
+            
+            <div id="adminLogin">
+                <h2>STAFF PORTAL</h2>
+                <input type="password" id="adminPass" placeholder="Enter Passcode">
+                <button id="loginBtn" class="btn-cyber-primary full-width">ACCESS TERMINAL</button>
+                <p id="loginError" class="error-text"></p>
+            </div>
+            
+            <div id="adminDashboard" style="display: none;">
+                <h2>BRP COMMAND CENTER</h2>
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="tab-dash">Dashboard</button>
+                    <button class="tab-btn" data-tab="tab-requests">Contracts</button>
+                    <button class="tab-btn" data-tab="tab-apps">Applications</button>
+                    <button class="tab-btn" data-tab="tab-roster">Roster</button>
+                    <button class="tab-btn" data-tab="tab-services">Services</button>
+                    <button class="tab-btn" data-tab="tab-addons">Add-Ons</button>
+                    <button class="tab-btn" data-tab="tab-cost">Cost Settings</button>
+                    <button class="tab-btn" data-tab="tab-webhooks">Webhooks</button>
+                    <button class="tab-btn" data-tab="tab-backup">Data Backup</button>
+                </div>
+
+                <div id="tab-dash" class="tab-content active"><div class="grid-4" id="adminStatsGrid"></div></div>
+                <div id="tab-requests" class="tab-content">
+                    <div class="admin-toolbar"><button class="btn-cyber-outline" onclick="clearSubmissions('requests')">Clear All Contracts</button></div>
+                    <div id="adminRequestsList"></div>
+                </div>
+                <div id="tab-apps" class="tab-content">
+                    <div class="admin-toolbar"><button class="btn-cyber-outline" onclick="clearSubmissions('apps')">Clear All Applications</button></div>
+                    <div id="adminAppsList"></div>
+                </div>
+                <div id="tab-roster" class="tab-content">
+                    <button class="btn-cyber-primary" onclick="openEditor('roster')">+ Add Personnel</button>
+                    <div id="adminRosterList" class="admin-list-grid"></div>
+                </div>
+                <div id="tab-services" class="tab-content">
+                    <button class="btn-cyber-primary" onclick="openEditor('services')">+ Add Service</button>
+                    <div id="adminServicesList" class="admin-list-grid"></div>
+                </div>
+                <div id="tab-addons" class="tab-content">
+                    <button class="btn-cyber-primary" onclick="openEditor('addons')">+ Add Fee</button>
+                    <div id="adminAddonsList" class="admin-list-grid"></div>
+                </div>
+
+                <div id="tab-cost" class="tab-content">
+                    <h3 style="color:var(--crimson); margin-bottom:15px;">Cost Calculator Algorithms</h3>
+                    <form id="costSettingsForm" class="brp-form" style="max-width: 600px;">
+                        <div class="form-group">
+                            <div><label>Employee Hourly Rate ($)</label><input type="number" id="cs_hourly" required></div>
+                            <div><label>Base Operation Fee ($)</label><input type="number" id="cs_base" required></div>
+                        </div>
+                        <div class="form-group">
+                            <div><label>Minimum Hours</label><input type="number" step="0.5" id="cs_minHrs" required></div>
+                            <div><label>Duration Step</label><input type="number" step="0.5" id="cs_stepHrs" required></div>
+                        </div>
+                        <h4 style="margin-top:10px;">Risk Level Extra Fees ($)</h4>
+                        <div class="form-group">
+                            <div><label>Low</label><input type="number" id="cs_riskLow" required></div>
+                            <div><label>Medium</label><input type="number" id="cs_riskMed" required></div>
+                        </div>
+                        <div class="form-group">
+                            <div><label>High</label><input type="number" id="cs_riskHigh" required></div>
+                            <div><label>Unknown</label><input type="number" id="cs_riskUnk" required></div>
+                        </div>
+                        <button type="submit" class="btn-cyber-primary full-width">SAVE COST SETTINGS</button>
+                    </form>
+                </div>
+
+                <div id="tab-webhooks" class="tab-content">
+                    <p class="cyber-subtext" style="color:#00ffaa; margin-bottom:1rem; padding:1rem; border:1px solid #00ffaa; background:rgba(0,255,170,0.1);">
+                        > SECURE UPLINK ACTIVE: Webhooks are now securely encrypted and managed by Netlify Cloud Functions.
+                    </p>
+                    <div class="cyber-panel">
+                        <p>To configure or change your Discord Webhook URLs, log in to your <strong>Netlify Dashboard</strong>.</p>
+                        <p style="margin-top: 10px;">Go to: <em>Site Configuration > Environment Variables</em></p>
+                        <ul style="margin-top: 10px; margin-left: 20px; color: var(--text-dim);">
+                            <li>Add Key: <code>CONTRACT_WEBHOOK_URL</code> for contracts.</li>
+                            <li>Add Key: <code>APPLICATION_WEBHOOK_URL</code> for recruitment.</li>
+                            <li>Add Key: <code>ADMIN_PASSCODE</code> to change your login password from 'blackrose'.</li>
+                        </ul>
+                        <p style="margin-top: 15px; color: var(--crimson);">Test your webhooks by submitting a real form on the public site.</p>
+                    </div>
+                </div>
+
+                <div id="tab-backup" class="tab-content">
+                    <p class="cyber-subtext" style="margin-bottom:1rem;">> CLOUD DATABASE ACTIVE: All edits made in this terminal are now permanently saved to the Netlify Cloud.</p>
+                    <div class="grid-2">
+                        <div class="cyber-card-small">
+                            <h4>Raw Data JSON</h4>
+                            <p style="margin-bottom: 15px;">Download or upload raw JSON backups of your live cloud data.</p>
+                            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                                <button id="exportDataBtn" class="btn-cyber-outline full-width">Download Cloud Backup</button>
+                                <button id="resetDemoBtn" class="btn-danger full-width">Wipe Cloud to Defaults</button>
+                            </div>
+                            <hr style="border-color: var(--border-color); margin: 15px 0;">
+                            <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 5px;">Restore Cloud Database from JSON file:</p>
+                            <input type="file" id="importDataFile" accept=".json" style="margin-bottom:10px; padding: 10px; background: var(--bg-input); border: 1px solid var(--border-color); width: 100%; color: white;">
+                            <button id="importDataBtn" class="btn-cyber-secondary full-width">Upload & Restore Cloud</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="itemEditorModal" class="modal" style="background: rgba(0,0,0,0.8); z-index: 2500;">
+        <div class="modal-content cyber-panel" style="max-width: 600px;">
+            <div class="panel-corners"></div>
+            <span class="close-editor-btn" style="float:right; cursor:pointer; font-size:1.5rem;">&times;</span>
+            <h3 id="editorTitle">Edit Record</h3>
+            <form id="itemEditorForm" class="brp-form" style="margin-top:1rem;">
+                <div id="editorFields"></div>
+                <button type="submit" class="btn-cyber-primary full-width">SAVE RECORD</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
