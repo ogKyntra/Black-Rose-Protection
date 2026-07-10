@@ -278,17 +278,17 @@
 
                 <div id="tab-webhooks" class="tab-content">
                     <p class="cyber-subtext" style="color:#00ffaa; margin-bottom:1rem; padding:1rem; border:1px solid #00ffaa; background:rgba(0,255,170,0.1);">
-                        > SECURE UPLINK ACTIVE: Webhooks are now securely encrypted and managed by Netlify Cloud Functions.
+                        > CONFIG FILE ACTIVE: Webhooks and the admin passcode are set directly in the site's code.
                     </p>
                     <div class="cyber-panel">
-                        <p>To configure or change your Discord Webhook URLs, log in to your <strong>Netlify Dashboard</strong>.</p>
-                        <p style="margin-top: 10px;">Go to: <em>Site Configuration > Environment Variables</em></p>
+                        <p>To configure or change your Discord Webhook URLs or the admin passcode, edit:</p>
+                        <p style="margin-top: 10px;"><code>netlify/functions/config.js</code></p>
                         <ul style="margin-top: 10px; margin-left: 20px; color: var(--text-dim);">
-                            <li>Add Key: <code>CONTRACT_WEBHOOK_URL</code> for contracts.</li>
-                            <li>Add Key: <code>APPLICATION_WEBHOOK_URL</code> for recruitment.</li>
-                            <li>Add Key: <code>ADMIN_PASSCODE</code> to change your login password from 'blackrose'.</li>
+                            <li><code>CONTRACT_WEBHOOK_URL</code> — Discord webhook for contract requests.</li>
+                            <li><code>APPLICATION_WEBHOOK_URL</code> — Discord webhook for recruitment applications.</li>
+                            <li><code>ADMIN_PASSCODE</code> — staff login password (default: 'blackrose').</li>
                         </ul>
-                        <p style="margin-top: 15px; color: var(--crimson);">Test your webhooks by submitting a real form on the public site.</p>
+                        <p style="margin-top: 15px; color: var(--crimson);">Save the file, commit, and redeploy the site for changes to take effect. Test your webhooks by submitting a real form on the public site.</p>
                     </div>
                 </div>
 

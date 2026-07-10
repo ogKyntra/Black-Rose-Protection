@@ -1,4 +1,5 @@
 const { connectLambda, getStore } = require("@netlify/blobs");
+const config = require("./config");
 
 exports.handler = async (event) => {
     if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
@@ -6,8 +7,7 @@ exports.handler = async (event) => {
     try {
         const { passcode } = JSON.parse(event.body);
         
-        const validPass = process.env.ADMIN_PASSCODE || "blackrose";
-        if (passcode !== validPass) {
+        if (passcode !== config.ADMIN_PASSCODE) {
             return { statusCode: 403, body: JSON.stringify({ error: "Unauthorized terminal access." }) };
         }
 

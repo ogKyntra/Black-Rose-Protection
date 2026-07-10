@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const note = document.createElement('p');
         note.className = "cyber-subtext";
         note.style = "color:#00ffaa; margin-bottom:1rem; padding:1rem; border:1px solid #00ffaa; background:rgba(0,255,170,0.1);";
-        note.innerHTML = "> CLOUD SYNC ACTIVE: Changes saved through Netlify are visible globally to all visitors. LocalStorage is only used as a fallback if the connection drops. Webhooks are securely managed in Netlify Environment Variables.";
+        note.innerHTML = "> CLOUD SYNC ACTIVE: Changes saved through Netlify are visible globally to all visitors. LocalStorage is only used as a fallback if the connection drops. Webhooks and the admin passcode are managed in netlify/functions/config.js.";
         backupTab.prepend(note);
     }
 });

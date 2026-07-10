@@ -14,23 +14,35 @@ as the database. No build step required.
    - Functions directory: `netlify/functions`
 4. Deploy. Netlify Blobs works with zero extra config — no database to provision.
 
-## Environment variables (optional, set in Site configuration → Environment variables)
+## Configuration (admin passcode & Discord webhooks)
 
-| Key | Purpose | Default if unset |
+These are set directly in the code — no Netlify dashboard/env var setup needed.
+Edit **`netlify/functions/config.js`**:
+
+```js
+module.exports = {
+    ADMIN_PASSCODE: "blackrose",
+    CONTRACT_WEBHOOK_URL: "",
+    APPLICATION_WEBHOOK_URL: ""
+};
+```
+
+| Key | Purpose | Default if empty |
 |---|---|---|
 | `ADMIN_PASSCODE` | Password for the staff/admin terminal (`[ STAFF LOGIN ]`) | `blackrose` |
-| `CONTRACT_WEBHOOK_URL` | Discord webhook URL — fires when a protection contract request is submitted | none (webhook step is skipped) |
-| `APPLICATION_WEBHOOK_URL` | Discord webhook URL — fires when a recruitment application is submitted | none (webhook step is skipped) |
+| `CONTRACT_WEBHOOK_URL` | Discord webhook URL — fires when a protection contract request is submitted | webhook step is skipped |
+| `APPLICATION_WEBHOOK_URL` | Discord webhook URL — fires when a recruitment application is submitted | webhook step is skipped |
 
-After adding/changing env vars, trigger a redeploy for them to take effect.
+Save the file, commit, and redeploy for changes to take effect.
 
 ## Notes
 
 - All site content (services, roster, add-ons, pricing) is edited live through
   the staff terminal and stored in a Netlify Blobs store called `brp_database`.
   It's shared across all visitors — there's no separate CMS.
-- The default admin passcode is `blackrose` unless you set `ADMIN_PASSCODE`.
+- The default admin passcode is `blackrose` unless you change it in `config.js`.
   It's sent to the function in plaintext JSON over HTTPS — fine for an RP
-  community site, but don't reuse it anywhere sensitive.
+  community site, but don't reuse it anywhere sensitive. Since it now lives in
+  the codebase, don't commit a real/sensitive passcode to a public repo.
 - `localStorage` is only used as an offline fallback cache; the source of
   truth is always the cloud store once a connection is available.

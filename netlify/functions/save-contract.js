@@ -1,4 +1,5 @@
 const { connectLambda, getStore } = require("@netlify/blobs");
+const config = require("./config");
 
 exports.handler = async (event) => {
     if (event.httpMethod !== "POST") return { statusCode: 405, body: "Method Not Allowed" };
@@ -14,7 +15,7 @@ exports.handler = async (event) => {
         await store.setJSON("requests", requests);
 
         // Discord Webhook Handling
-        const webhookUrl = process.env.CONTRACT_WEBHOOK_URL;
+        const webhookUrl = config.CONTRACT_WEBHOOK_URL;
         let discordStatus = "Webhook not configured.";
         
         if (webhookUrl) {
