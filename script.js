@@ -124,7 +124,7 @@ const DEFAULT_DATA = {
             "status": "On Duty",
             "specialty": "Operations / High-Risk Details",
             "bio": "The architect of Black Rose. Lethal, precise, and demands absolute loyalty.",
-            "image": "https://cdn.discordapp.com/attachments/1448494461012152424/1525109534014570517/Screenshot_2026-07-07_144116.png?ex=6a523070&is=6a50def0&hm=84027bd2680de308a9972b48df82c77f0da67a7ce8f7f1592d7ead76a1ba5f75&",
+            "image": "https://cdn.discordapp.com/attachments/1448494461012152424/1525130974848090264/Screenshot_2026-07-10_142545.png?ex=6a524467&is=6a50f2e7&hm=7dd025bd760266cd73541ad331d8cecb4ae2e1eab6e1e382ddef0ab90726575c&",
             "bookable": true,
             "visible": true
         },
