@@ -10,7 +10,6 @@
     <div class="scanlines"></div>
     <div class="vignette"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-brand">
             <span class="logo-main">BLACK ROSE</span>
@@ -22,11 +21,11 @@
             <a href="#estimator">Estimator</a>
             <a href="#roster">Roster</a>
             <a href="#apply" class="nav-link-sub">Apply</a>
+            <a href="https://discord.gg/5hyT2CcJCD" target="_blank" class="btn-cyber-outline" style="margin-right: 10px;">Discord</a>
             <a href="#request" class="btn-cyber-primary">Request Protection</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="cyber-grid"></div>
         <div class="hero-content">
@@ -38,11 +37,11 @@
                 <a href="#services" class="btn-cyber-secondary">View Services</a>
                 <a href="#request" class="btn-cyber-primary">Request Protection</a>
                 <a href="#apply" class="btn-cyber-outline">Apply Now</a>
+                <a href="https://discord.gg/5hyT2CcJCD" target="_blank" class="btn-cyber-outline">Join Discord</a>
             </div>
         </div>
     </header>
 
-    <!-- Cyber Info Cards -->
     <section class="container fade-in" style="margin-top: -80px; position: relative; z-index: 10;">
         <div class="grid-4 info-cards">
             <div class="cyber-card-small"><div class="card-status">ACTIVE</div><h4>Private Security</h4><p>Discreet protection for individuals, businesses, and events.</p></div>
@@ -52,7 +51,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="container fade-in">
         <div class="section-header">
             <h2>ABOUT THE OPERATION</h2>
@@ -65,7 +63,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="container fade-in">
         <div class="section-header">
             <h2>SERVICES AVAILABLE</h2>
@@ -74,7 +71,6 @@
         <div id="services-grid" class="grid-4"></div>
     </section>
 
-    <!-- Estimator Section (Replaced Pricing) -->
     <section id="estimator" class="container fade-in">
         <div class="section-header">
             <h2>CONTRACT COST ESTIMATOR</h2>
@@ -87,7 +83,6 @@
         </div>
     </section>
 
-    <!-- Roster Section -->
     <section id="roster" class="container fade-in">
         <div class="section-header">
             <h2>ACTIVE ROSTER</h2>
@@ -96,9 +91,7 @@
         <div id="roster-grid" class="grid-4"></div>
     </section>
 
-    <!-- Forms Section -->
     <div class="forms-container fade-in">
-        <!-- Request Protection (With Calculator) -->
         <section id="request" class="container">
             <div class="section-header">
                 <h2>REQUEST PROTECTION</h2>
@@ -128,7 +121,7 @@
                             </select>
                             <select id="reqVehicle">
                                 <option value="Unsure">Vehicle Support: Unsure</option>
-                                <option value="Yes">Yes, Vehicle Support</option>
+                                <option value="Yes">Yes, Marked Security Vehicle</option>
                                 <option value="No">No Vehicle Needed</option>
                             </select>
                         </div>
@@ -140,11 +133,9 @@
                             <option value="Unknown">Unknown Risk</option>
                         </select>
                         
-                        <!-- Dynamic Add-ons -->
                         <div class="form-section-label" style="color:var(--crimson); font-weight:bold; margin-top:10px;">OPERATIONAL ADD-ONS</div>
                         <div id="reqAddonsContainer" class="addon-grid">
-                            <!-- Populated via JS -->
-                        </div>
+                            </div>
 
                         <textarea id="reqDetails" rows="3" placeholder="Extra Details / Threat Intelligence"></textarea>
                         <input type="text" id="reqContactPref" placeholder="Preferred Contact Method (e.g., SMS, Email, In-City Radio)" required>
@@ -154,7 +145,6 @@
                     </form>
                 </div>
                 
-                <!-- Live Calculator Panel -->
                 <div class="cyber-panel calculator-panel">
                     <div class="panel-corners"></div>
                     <h3 style="color:var(--crimson); border-bottom:1px solid #333; padding-bottom:10px; margin-bottom:15px;">ESTIMATED CONTRACT COST</h3>
@@ -173,7 +163,6 @@
             </div>
         </section>
 
-        <!-- Recruitment -->
         <section id="apply" class="container fade-in">
             <div class="section-header">
                 <h2>JOIN BLACK ROSE</h2>
@@ -207,13 +196,14 @@
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
+        <div style="margin-bottom: 2rem;">
+            <a href="https://discord.gg/5hyT2CcJCD" target="_blank" class="btn-cyber-outline" style="padding: 0.5rem 1rem;">[ JOIN DISCORD ]</a>
+        </div>
         <p>&copy; <span id="year"></span> BLACK ROSE PROTECTION // SECURE CONNECTION</p>
         <button id="openAdminBtn" class="admin-link">[ STAFF LOGIN ]</button>
     </footer>
 
-    <!-- Admin Modal -->
     <div id="adminModal" class="modal">
         <div class="modal-content cyber-panel">
             <div class="panel-corners"></div>
@@ -262,7 +252,6 @@
                     <div id="adminAddonsList" class="admin-list-grid"></div>
                 </div>
 
-                <!-- Cost Settings -->
                 <div id="tab-cost" class="tab-content">
                     <h3 style="color:var(--crimson); margin-bottom:15px;">Cost Calculator Algorithms</h3>
                     <form id="costSettingsForm" class="brp-form" style="max-width: 600px;">
@@ -287,54 +276,36 @@
                     </form>
                 </div>
 
-                <!-- Webhooks -->
                 <div id="tab-webhooks" class="tab-content">
-                    <p class="cyber-subtext" style="color:#ffaa00; margin-bottom:1rem; padding:1rem; border:1px solid #ffaa00; background:rgba(255,170,0,0.1);">
-                        > WARNING: Discord webhook URLs should be treated like passwords. If this site is public, storing a webhook in browser localStorage can expose it to someone using the same browser/device or inspecting the site. For a safer public setup, use a backend or serverless function.
+                    <p class="cyber-subtext" style="color:#00ffaa; margin-bottom:1rem; padding:1rem; border:1px solid #00ffaa; background:rgba(0,255,170,0.1);">
+                        > SECURE UPLINK ACTIVE: Webhooks are now securely encrypted and managed by Netlify Cloud Functions.
                     </p>
-                    <div class="cyber-panel" style="max-width:700px;">
-                        <h4 style="margin-bottom:10px;">Contract Requests Webhook</h4>
-                        <label style="display:block; margin-bottom:5px;"><input type="checkbox" id="wh_req_enable"> Enable Contract Webhook</label>
-                        <input type="text" id="wh_req_url" placeholder="https://discord.com/api/webhooks/..." style="margin-bottom:10px;">
-                        <button class="btn-cyber-outline btn-small" id="btnTestReqWh">Test Contract Webhook</button>
-                        
-                        <hr style="border-color:#333; margin:20px 0;">
-                        
-                        <h4 style="margin-bottom:10px;">Recruitment Applications Webhook</h4>
-                        <label style="display:block; margin-bottom:5px;"><input type="checkbox" id="wh_app_enable"> Enable Application Webhook</label>
-                        <input type="text" id="wh_app_url" placeholder="https://discord.com/api/webhooks/..." style="margin-bottom:10px;">
-                        <button class="btn-cyber-outline btn-small" id="btnTestAppWh">Test Application Webhook</button>
-                        
-                        <button id="saveWebhooksBtn" class="btn-cyber-primary full-width" style="margin-top:20px;">SAVE WEBHOOK SETTINGS</button>
+                    <div class="cyber-panel">
+                        <p>To configure or change your Discord Webhook URLs, log in to your <strong>Netlify Dashboard</strong>.</p>
+                        <p style="margin-top: 10px;">Go to: <em>Site Configuration > Environment Variables</em></p>
+                        <ul style="margin-top: 10px; margin-left: 20px; color: var(--text-dim);">
+                            <li>Add Key: <code>DISCORD_CONTRACT_WEBHOOK</code> for contracts.</li>
+                            <li>Add Key: <code>DISCORD_APP_WEBHOOK</code> for recruitment.</li>
+                            <li>Add Key: <code>ADMIN_PASSCODE</code> to change your login password from 'blackrose'.</li>
+                        </ul>
+                        <p style="margin-top: 15px; color: var(--crimson);">Test your webhooks by submitting a real form on the public site.</p>
                     </div>
                 </div>
 
-                <!-- Backup Tab -->
                 <div id="tab-backup" class="tab-content">
-                    <p class="cyber-subtext" style="margin-bottom:1rem;">> HOSTING NOTE: LocalStorage edits only affect this browser. Exported script.js updates default website data only. It does not include private submissions or webhook URLs.</p>
+                    <p class="cyber-subtext" style="margin-bottom:1rem;">> CLOUD DATABASE ACTIVE: All edits made in this terminal are now permanently saved to the Netlify Cloud.</p>
                     <div class="grid-2">
-                        <!-- Raw JSON Controls -->
                         <div class="cyber-card-small">
                             <h4>Raw Data JSON</h4>
-                            <p style="margin-bottom: 15px;">Download or upload raw JSON data backups.</p>
+                            <p style="margin-bottom: 15px;">Download or upload raw JSON backups of your live cloud data.</p>
                             <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                                <button id="exportDataBtn" class="btn-cyber-outline full-width">Export Data JSON</button>
-                                <button id="resetDemoBtn" class="btn-danger full-width">Reset to Defaults</button>
+                                <button id="exportDataBtn" class="btn-cyber-outline full-width">Download Cloud Backup</button>
+                                <button id="resetDemoBtn" class="btn-danger full-width">Wipe Cloud to Defaults</button>
                             </div>
-                            <input type="file" id="importDataFile" accept=".json" style="margin-bottom:10px; padding: 10px; background: var(--bg-input); border: 1px solid var(--border-color); width: 100%; color: white;">
-                            <button id="importDataBtn" class="btn-cyber-secondary full-width">Import Data JSON</button>
-                        </div>
-
-                        <!-- Script.js Export Controls -->
-                        <div class="cyber-card-small" style="border-color: var(--crimson);">
-                            <h4>System Export (script.js)</h4>
-                            <p style="margin-bottom: 15px;">Generate a production-ready script.js with your new defaults injected.</p>
-                            <button id="exportScriptBtn" class="btn-cyber-primary full-width" style="margin-bottom:15px;">[ EXPORT UPDATED SCRIPT.JS ]</button>
-                            
                             <hr style="border-color: var(--border-color); margin: 15px 0;">
-                            <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 5px;">Fallback: If export fails (e.g., using file://), paste your current script.js code below to patch it manually.</p>
-                            <textarea id="fallbackScriptInput" rows="4" placeholder="Paste full script.js code here..."></textarea>
-                            <button id="patchPastedScriptBtn" class="btn-cyber-outline full-width" style="margin-top: 10px;">Paste Current script.js and Patch</button>
+                            <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 5px;">Restore Cloud Database from JSON file:</p>
+                            <input type="file" id="importDataFile" accept=".json" style="margin-bottom:10px; padding: 10px; background: var(--bg-input); border: 1px solid var(--border-color); width: 100%; color: white;">
+                            <button id="importDataBtn" class="btn-cyber-secondary full-width">Upload & Restore Cloud</button>
                         </div>
                     </div>
                 </div>
@@ -343,7 +314,6 @@
         </div>
     </div>
 
-    <!-- Reusable Editor Modal -->
     <div id="itemEditorModal" class="modal" style="background: rgba(0,0,0,0.8); z-index: 2500;">
         <div class="modal-content cyber-panel" style="max-width: 600px;">
             <div class="panel-corners"></div>

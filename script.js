@@ -1,63 +1,72 @@
-/* === BLACK ROSE DEFAULT DATA START === */
+/* === BLACK ROSE DEFAULT DATA FALLBACK === */
 const DEFAULT_DATA = {
     "services": [
         { "id": "s1", "name": "Personal Protection", "desc": "Close-quarters executive protection and escorting.", "price": "Varies by risk level", "icon": "[ P-01 ]", "visible": true },
         { "id": "s2", "name": "Event Security", "desc": "Crowd control, access management, and threat mitigation.", "price": "Varies by scale", "icon": "[ E-02 ]", "visible": true },
         { "id": "s3", "name": "Business Security", "desc": "Static guarding and active monitoring for establishments.", "price": "Varies by footprint", "icon": "[ B-03 ]", "visible": true },
-        { "id": "s4", "name": "Property Patrols", "desc": "Randomized armed patrols for private estates and compounds.", "price": "Starting at $75,000", "icon": "[ P-04 ]", "visible": true },
-        { "id": "s5", "name": "High-Risk Transport", "desc": "Secure movement of VIPs or sensitive cargo across hostile zones.", "price": "Custom Quote", "icon": "[ T-05 ]", "visible": true },
-        { "id": "s6", "name": "Private Escort Service", "desc": "Discreet companionship combined with lethal proficiency.", "price": "Starting at $100,000", "icon": "[ E-06 ]", "visible": true },
-        { "id": "s7", "name": "Emergency Response", "desc": "Rapid deployment to active hostile situations.", "price": "$150,000+ Callout", "icon": "[ R-07 ]", "visible": true },
-        { "id": "s8", "name": "Venue Security", "desc": "Doorstaff and interior oversight for clubs and lounges.", "price": "Contract based", "icon": "[ V-08 ]", "visible": true }
+        { "id": "s4", "name": "Property Patrols", "desc": "Randomized armed patrols for private estates and compounds.", "price": "Starting at $75,000", "icon": "[ P-04 ]", "visible": true }
     ],
     "addons": [
         { "id": "a1", "name": "Marked Security Vehicle", "desc": "", "price": 50000, "priceType": "flat", "visible": true },
         { "id": "a2", "name": "Second Vehicle / Convoy Support", "desc": "", "price": 100000, "priceType": "flat", "visible": true },
-        { "id": "a3", "name": "Emergency Same-Day Callout", "desc": "", "price": 150000, "priceType": "flat", "visible": true },
-        { "id": "a4", "name": "Armed / High-Risk Detail", "desc": "", "price": 150000, "priceType": "flat", "visible": true },
-        { "id": "a5", "name": "Out-of-City Travel", "desc": "", "price": 75000, "priceType": "flat", "visible": true },
-        { "id": "a6", "name": "Extended Equipment Loadout", "desc": "", "price": 50000, "priceType": "flat", "visible": true },
-        { "id": "a7", "name": "Priority Contract Handling", "desc": "", "price": 100000, "priceType": "flat", "visible": true }
+        { "id": "a3", "name": "Emergency Same-Day Callout", "desc": "", "price": 150000, "priceType": "flat", "visible": true }
     ],
     "roster": [
-        { "id": "r1", "name": "Roxy Rose", "rank": "Founder / Director", "status": "On Duty", "specialty": "Operations / High-Risk Details", "bio": "The architect of Black Rose. Lethal, precise, and demands absolute loyalty.", "image": "", "bookable": true, "visible": true },
-        { "id": "r2", "name": "Jimmy Egan", "rank": "Senior Protection Officer", "status": "Available", "specialty": "Close Protection / Tactical Driving", "bio": "Veteran operator with a zero-failure rate on executive protection details.", "image": "", "bookable": true, "visible": true },
-        { "id": "r3", "name": "Rose Unit", "rank": "Security Officer", "status": "Available", "specialty": "Venue Security / Patrols", "bio": "Standard trained operative capable of handling property and crowd security.", "image": "", "bookable": true, "visible": true },
-        { "id": "r4", "name": "Open Position", "rank": "Recruit", "status": "In Training", "specialty": "TBD", "bio": "We are currently seeking capable individuals who thrive under pressure.", "image": "", "bookable": false, "visible": true }
+        { "id": "r1", "name": "Roxy Rose", "rank": "Founder / Director", "status": "On Duty", "specialty": "Operations", "bio": "The architect of Black Rose.", "image": "", "bookable": true, "visible": true },
+        { "id": "r2", "name": "Jimmy Egan", "rank": "Senior Protection Officer", "status": "Available", "specialty": "Close Protection", "bio": "Veteran operator.", "image": "", "bookable": true, "visible": true },
+        { "id": "r3", "name": "Open Position", "rank": "Recruit", "status": "In Training", "specialty": "TBD", "bio": "Seeking capable individuals.", "image": "", "bookable": false, "visible": true }
     ],
-    "contractQuestions": [],
-    "applicationQuestions": [],
     "costSettings": {
-        "employeeHourlyRate": 75000,
-        "baseOperationFee": 50000,
-        "minimumHours": 1,
-        "durationStep": 0.5,
-        "riskFees": {
-            "Low": 0,
-            "Medium": 50000,
-            "High": 150000,
-            "Unknown": 75000
-        }
+        "employeeHourlyRate": 75000, "baseOperationFee": 50000, "minimumHours": 1, "durationStep": 0.5,
+        "riskFees": { "Low": 0, "Medium": 50000, "High": 150000, "Unknown": 75000 }
     }
 };
-/* === BLACK ROSE DEFAULT DATA END === */
 
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// ==========================================
-// CORE DATA MANAGEMENT
-// ==========================================
-function getSiteData() {
-    let data = JSON.parse(localStorage.getItem('brp_siteData'));
-    if (!data || !data.costSettings) { data = DEFAULT_DATA; localStorage.setItem('brp_siteData', JSON.stringify(data)); }
-    return data;
-}
-function saveSiteData(data) { localStorage.setItem('brp_siteData', JSON.stringify(data)); }
-function getSubmissions(type) { return JSON.parse(localStorage.getItem(`brp_${type}`) || '[]'); }
-function saveSubmissions(type, data) { localStorage.setItem(`brp_${type}`, JSON.stringify(data)); }
 function generateId() { return Date.now().toString(36) + Math.random().toString(36).substr(2, 5); }
 function getTimestamp() { return new Date().toLocaleString('en-GB'); }
 function formatMoney(amount) { return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(amount); }
+
+// ==========================================
+// CLOUD STATE MANAGEMENT
+// ==========================================
+let CLOUD_STATE = { siteData: null, requests: [], apps: [] };
+let ADMIN_PASSCODE = ""; 
+
+async function bootTerminal() {
+    try {
+        const res = await fetch('/.netlify/functions/get-data?key=siteData');
+        if (res.ok) {
+            const data = await res.json();
+            if (data) CLOUD_STATE.siteData = data;
+        }
+    } catch (e) { console.log("Network error. Using local fallbacks."); }
+    renderPublicSite();
+}
+bootTerminal(); 
+
+function getSiteData() { return CLOUD_STATE.siteData || DEFAULT_DATA; }
+
+async function saveSiteData(data) {
+    CLOUD_STATE.siteData = data;
+    renderPublicSite();
+    await fetch('/.netlify/functions/save-data', {
+        method: 'POST',
+        body: JSON.stringify({ key: 'siteData', data, passcode: ADMIN_PASSCODE })
+    });
+}
+
+function getSubmissions(type) { return type === 'requests' ? CLOUD_STATE.requests : CLOUD_STATE.apps; }
+
+async function saveSubmissions(type, data) {
+    if (type === 'requests') CLOUD_STATE.requests = data;
+    else CLOUD_STATE.apps = data;
+    await fetch('/.netlify/functions/save-data', {
+        method: 'POST',
+        body: JSON.stringify({ key: type, data, passcode: ADMIN_PASSCODE })
+    });
+}
+
 
 // ==========================================
 // PUBLIC SITE RENDERING & CALCULATOR
@@ -67,7 +76,6 @@ let currentPriceBreakdown = {};
 function renderPublicSite() {
     const data = getSiteData();
 
-    // Services
     document.getElementById('services-grid').innerHTML = data.services.filter(s => s.visible).map(s => `
         <div class="cyber-card">
             <span class="cyber-subtext">${s.icon || '// SYS.OP'}</span>
@@ -75,7 +83,6 @@ function renderPublicSite() {
             <p>${s.desc}</p>
         </div>`).join('');
 
-    // Roster
     document.getElementById('roster-grid').innerHTML = data.roster.filter(r => r.visible).map(r => {
         let statusClass = r.status.toLowerCase().replace(' ', '');
         let imgHtml = r.image ? `<img src="${r.image}" class="roster-img" alt="${r.name}">` : `<div class="roster-img">NO IMAGE DATA</div>`;
@@ -91,13 +98,11 @@ function renderPublicSite() {
         </div>`;
     }).join('');
 
-    // Populate Estimator Form Elements
-    // 1. Employee limit
     const bookableRosterCount = data.roster.filter(r => r.bookable && r.visible && r.name !== 'Open Position').length;
     const staffSelect = document.getElementById('reqStaff');
     staffSelect.innerHTML = '';
     if (bookableRosterCount === 0) {
-        staffSelect.innerHTML = `<option value="" disabled selected>No employees currently available for contract</option>`;
+        staffSelect.innerHTML = `<option value="" disabled selected>No employees currently available</option>`;
     } else {
         staffSelect.innerHTML = `<option value="" disabled selected>Number of Employees Needed</option>`;
         for(let i = 1; i <= bookableRosterCount; i++) {
@@ -105,45 +110,33 @@ function renderPublicSite() {
         }
     }
 
-    // 2. Add-ons
     document.getElementById('reqAddonsContainer').innerHTML = data.addons.filter(a => a.visible).map(a => `
         <label class="addon-checkbox">
             <input type="checkbox" name="contractAddons" value="${a.id}" data-price="${a.price}" data-type="${a.priceType}">
             ${a.name} (${formatMoney(a.price)})
-        </label>
-    `).join('');
+        </label>`).join('');
 
-    // Set constraints on duration
     const durInput = document.getElementById('reqDuration');
     durInput.min = data.costSettings.minimumHours;
     durInput.step = data.costSettings.durationStep;
 
-    calculateTotal(); // Initial calc
+    calculateTotal(); 
 }
 
 function calculateTotal() {
     const data = getSiteData();
     const cs = data.costSettings;
-
     let base = parseFloat(cs.baseOperationFee) || 0;
-    
-    let staffStr = document.getElementById('reqStaff').value;
-    let empCount = staffStr ? parseInt(staffStr) : 0;
-    
-    let durStr = document.getElementById('reqDuration').value;
-    let duration = durStr ? parseFloat(durStr) : 0;
-    
+    let empCount = parseInt(document.getElementById('reqStaff').value) || 0;
+    let duration = parseFloat(document.getElementById('reqDuration').value) || 0;
     let empCost = empCount * duration * (parseFloat(cs.employeeHourlyRate) || 0);
-    
     let riskSelection = document.getElementById('reqRisk').value;
     let riskFee = riskSelection ? (parseFloat(cs.riskFees[riskSelection]) || 0) : 0;
+    let addonsTotal = 0; let selectedAddonNames = [];
 
-    let addonsTotal = 0;
-    let selectedAddonNames = [];
     document.querySelectorAll('input[name="contractAddons"]:checked').forEach(cb => {
         let p = parseFloat(cb.dataset.price) || 0;
         let type = cb.dataset.type || 'flat';
-        
         let calculatedPrice = 0;
         if (type === 'flat') calculatedPrice = p;
         else if (type === 'per_hour') calculatedPrice = p * duration;
@@ -156,56 +149,40 @@ function calculateTotal() {
 
     let total = base + empCost + riskFee + addonsTotal;
 
-    // Update DOM
     document.getElementById('calcBase').textContent = formatMoney(base);
     document.getElementById('calcEmpCost').textContent = formatMoney(empCost);
     document.getElementById('calcRisk').textContent = formatMoney(riskFee);
     document.getElementById('calcAddons').textContent = formatMoney(addonsTotal);
     document.getElementById('calcTotal').textContent = formatMoney(total);
 
-    // Save state for submission
     currentPriceBreakdown = {
-        baseFee: base,
-        employeeHourlyRate: parseFloat(cs.employeeHourlyRate),
-        employeeCost: empCost,
-        riskFee: riskFee,
-        addonTotal: addonsTotal,
-        estimatedTotal: total,
-        selectedAddonNames: selectedAddonNames
+        baseFee: base, employeeHourlyRate: parseFloat(cs.employeeHourlyRate), employeeCost: empCost,
+        riskFee: riskFee, addonTotal: addonsTotal, estimatedTotal: total, selectedAddonNames: selectedAddonNames
     };
 }
 
-// Bind Calculator Events
 ['reqStaff', 'reqDuration', 'reqRisk'].forEach(id => {
     document.getElementById(id).addEventListener('change', calculateTotal);
     document.getElementById(id).addEventListener('input', calculateTotal);
 });
 document.getElementById('reqAddonsContainer').addEventListener('change', calculateTotal);
 
-
-renderPublicSite();
-
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); } });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-
 // ==========================================
-// FORM SUBMISSIONS (WITH NETLIFY FUNCTIONS)
+// FORM SUBMISSIONS (NETLIFY CLOUD API)
 // ==========================================
 document.getElementById('requestForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('button'); 
     btn.disabled = true; btn.textContent = "[ TRANSMITTING TO NETLIFY... ]";
-    
-    // Ensure accurate final calculation
     calculateTotal();
-    const ts = getTimestamp();
-    const sId = generateId();
-
+    
     const reqData = {
-        id: sId, timestamp: ts, status: 'New', notes: '',
+        id: generateId(), timestamp: getTimestamp(), status: 'New', notes: '',
         name: document.getElementById('reqName').value, phone: document.getElementById('reqPhone').value,
         business: document.getElementById('reqBusiness').value, service: document.getElementById('reqService').value,
         date: document.getElementById('reqDate').value, time: document.getElementById('reqTime').value,
@@ -214,38 +191,24 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
         risk: document.getElementById('reqRisk').value, details: document.getElementById('reqDetails').value,
         contactPref: document.getElementById('reqContactPref').value,
         pricing: currentPriceBreakdown,
-        totalCost: document.getElementById('calcTotal').innerText // Captures calculated UI total for backend
+        totalCost: document.getElementById('calcTotal').innerText 
     };
-    
-    // Save locally for Admin Panel access
-    const reqs = getSubmissions('requests'); reqs.push(reqData); saveSubmissions('requests', reqs);
-    let statusMsg = "CONTRACT SAVED LOCALLY.";
 
     const statusEl = document.getElementById('reqStatus');
-
-    // Secure Netlify Backend Transmission
     try {
         const response = await fetch('/.netlify/functions/submit-contract', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(reqData)
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(reqData)
         });
-
         const result = await response.json();
         if (response.ok) {
-            statusMsg = `> ${result.message}`;
             statusEl.className = "form-status success-text";
-        } else {
-            throw new Error(result.error || "Transmission failure.");
-        }
+            statusEl.innerHTML = `<span>> ${result.message}</span>`;
+            e.target.reset(); calculateTotal();
+        } else throw new Error(result.error || "Transmission failure.");
     } catch (err) {
-        statusMsg = `> ERROR: ${err.message} (Data saved to local terminal fallback)`;
         statusEl.className = "form-status error-text";
+        statusEl.innerHTML = `<span>> ERROR: ${err.message}</span>`;
     }
-
-    statusEl.innerHTML = `<span>${statusMsg}</span>`;
-    e.target.reset(); 
-    calculateTotal(); // Reset calc display
     setTimeout(() => { btn.disabled = false; btn.textContent = "[ TRANSMIT CONTRACT REQUEST ]"; }, 2000);
 });
 
@@ -253,12 +216,9 @@ document.getElementById('applyForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('button'); 
     btn.disabled = true; btn.textContent = "[ SUBMITTING TO NETLIFY... ]";
-    
-    const ts = getTimestamp();
-    const sId = generateId();
 
     const appData = {
-        id: sId, timestamp: ts, status: 'New', notes: '',
+        id: generateId(), timestamp: getTimestamp(), status: 'New', notes: '',
         name: document.getElementById('appName').value, phone: document.getElementById('appPhone').value,
         experience: document.getElementById('appExp').value, whyJoin: document.getElementById('appWhy').value,
         availability: document.getElementById('appAvailability').value, strengths: document.getElementById('appStrengths').value,
@@ -266,51 +226,54 @@ document.getElementById('applyForm').addEventListener('submit', async (e) => {
         highRisk: document.getElementById('appHighRisk').value
     };
 
-    // Save locally for Admin Panel access
-    const apps = getSubmissions('apps'); apps.push(appData); saveSubmissions('apps', apps);
-    let statusMsg = "APPLICATION FILED LOCALLY.";
-
     const statusEl = document.getElementById('appStatus');
-
-    // Secure Netlify Backend Transmission
     try {
         const response = await fetch('/.netlify/functions/submit-application', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(appData)
+            method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(appData)
         });
-
         const result = await response.json();
         if (response.ok) {
-            statusMsg = `> ${result.message}`;
             statusEl.className = "form-status success-text";
-        } else {
-            throw new Error(result.error || "Processing error.");
-        }
+            statusEl.innerHTML = `<span>> ${result.message}</span>`;
+            e.target.reset();
+        } else throw new Error(result.error || "Processing error.");
     } catch (err) {
-        statusMsg = `> UPLINK ERROR: ${err.message} (Data saved to local terminal fallback)`;
         statusEl.className = "form-status error-text";
+        statusEl.innerHTML = `<span>> UPLINK ERROR: ${err.message}</span>`;
     }
-
-    statusEl.innerHTML = `<span>${statusMsg}</span>`;
-    e.target.reset(); 
     setTimeout(() => { btn.disabled = false; btn.textContent = "[ SUBMIT APPLICATION ]"; }, 2000);
 });
 
 
 // ==========================================
-// ADMIN PANEL LOGIC
+// ADMIN PANEL LOGIC (Secured via Netlify API)
 // ==========================================
 const adminModal = document.getElementById('adminModal');
 document.getElementById('openAdminBtn').addEventListener('click', () => adminModal.style.display = 'block');
 document.querySelector('.close-btn').addEventListener('click', () => adminModal.style.display = 'none');
 
-document.getElementById('loginBtn').addEventListener('click', () => {
-    if (document.getElementById('adminPass').value === 'blackrose') {
-        document.getElementById('adminLogin').style.display = 'none';
-        document.getElementById('adminDashboard').style.display = 'block';
-        refreshAdmin();
-    } else { document.getElementById('loginError').textContent = "[ ACCESS DENIED ]"; }
+document.getElementById('loginBtn').addEventListener('click', async () => {
+    const pass = document.getElementById('adminPass').value;
+    if (pass.length > 0) { 
+        ADMIN_PASSCODE = pass;
+        document.getElementById('loginBtn').textContent = "[ AUTHENTICATING... ]";
+        
+        try {
+            const [reqRes, appRes] = await Promise.all([
+                fetch('/.netlify/functions/get-data?key=requests'),
+                fetch('/.netlify/functions/get-data?key=apps')
+            ]);
+            if (reqRes.ok) CLOUD_STATE.requests = await reqRes.json() || [];
+            if (appRes.ok) CLOUD_STATE.apps = await appRes.json() || [];
+
+            document.getElementById('adminLogin').style.display = 'none';
+            document.getElementById('adminDashboard').style.display = 'block';
+            refreshAdmin();
+        } catch(e) {
+            document.getElementById('loginError').textContent = "[ NETWORK OR AUTH ERROR ]";
+            document.getElementById('loginBtn').textContent = "ACCESS TERMINAL";
+        }
+    } else { document.getElementById('loginError').textContent = "[ ENTER PASSCODE ]"; }
 });
 
 document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -324,22 +287,14 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 
 function refreshAdmin() {
     renderAdminStats();
-    renderSubmissions('requests');
-    renderSubmissions('apps');
-    renderEditorList('roster');
-    renderEditorList('services');
-    renderEditorList('addons');
+    renderSubmissions('requests'); renderSubmissions('apps');
+    renderEditorList('roster'); renderEditorList('services'); renderEditorList('addons');
     
-    // Load Cost Settings
     const cs = getSiteData().costSettings;
-    document.getElementById('cs_hourly').value = cs.employeeHourlyRate;
-    document.getElementById('cs_base').value = cs.baseOperationFee;
-    document.getElementById('cs_minHrs').value = cs.minimumHours;
-    document.getElementById('cs_stepHrs').value = cs.durationStep;
-    document.getElementById('cs_riskLow').value = cs.riskFees.Low;
-    document.getElementById('cs_riskMed').value = cs.riskFees.Medium;
-    document.getElementById('cs_riskHigh').value = cs.riskFees.High;
-    document.getElementById('cs_riskUnk').value = cs.riskFees.Unknown;
+    document.getElementById('cs_hourly').value = cs.employeeHourlyRate; document.getElementById('cs_base').value = cs.baseOperationFee;
+    document.getElementById('cs_minHrs').value = cs.minimumHours; document.getElementById('cs_stepHrs').value = cs.durationStep;
+    document.getElementById('cs_riskLow').value = cs.riskFees.Low; document.getElementById('cs_riskMed').value = cs.riskFees.Medium;
+    document.getElementById('cs_riskHigh').value = cs.riskFees.High; document.getElementById('cs_riskUnk').value = cs.riskFees.Unknown;
 }
 
 function renderAdminStats() {
@@ -374,7 +329,6 @@ function renderSubmissions(type) {
             <div class="sub-field"><strong>Details:</strong> ${sub.details}</div>
             <div class="sub-field"><strong>Contact Pref:</strong> ${sub.contactPref}</div>`;
         } else {
-            // Updated to reflect the appWhy -> whyJoin variable change for Netlify
             detailsHtml = `
             <div class="sub-field"><strong>Applicant:</strong> ${sub.name} (${sub.phone}) | <strong>Role:</strong> ${sub.role}</div>
             <div class="sub-field"><strong>Avail:</strong> ${sub.availability} | <strong>High Risk OK:</strong> ${sub.highRisk}</div>
@@ -398,55 +352,26 @@ function renderSubmissions(type) {
     }).join('');
 }
 
-window.updateSubStatus = (type, id, val) => { let subs = getSubmissions(type); let idx = subs.findIndex(s=>s.id===id); if(idx>-1) { subs[idx].status = val; saveSubmissions(type, subs); renderAdminStats(); renderSubmissions(type); } }
-window.updateSubNote = (type, id, val) => { let subs = getSubmissions(type); let idx = subs.findIndex(s=>s.id===id); if(idx>-1) { subs[idx].notes = val; saveSubmissions(type, subs); } }
-window.deleteSub = (type, id) => { if(!confirm("PURGE RECORD?")) return; let subs = getSubmissions(type); subs = subs.filter(s=>s.id!==id); saveSubmissions(type, subs); renderAdminStats(); renderSubmissions(type); }
-window.clearSubmissions = (type) => { if(confirm("PURGE ALL DATA IN THIS CATEGORY?")) { saveSubmissions(type, []); refreshAdmin(); } }
+window.updateSubStatus = async (type, id, val) => { let subs = getSubmissions(type); let idx = subs.findIndex(s=>s.id===id); if(idx>-1) { subs[idx].status = val; await saveSubmissions(type, subs); renderAdminStats(); renderSubmissions(type); } }
+window.updateSubNote = async (type, id, val) => { let subs = getSubmissions(type); let idx = subs.findIndex(s=>s.id===id); if(idx>-1) { subs[idx].notes = val; await saveSubmissions(type, subs); } }
+window.deleteSub = async (type, id) => { if(!confirm("PURGE RECORD?")) return; let subs = getSubmissions(type); subs = subs.filter(s=>s.id!==id); await saveSubmissions(type, subs); renderAdminStats(); renderSubmissions(type); }
+window.clearSubmissions = async (type) => { if(confirm("PURGE ALL DATA IN THIS CATEGORY?")) { await saveSubmissions(type, []); refreshAdmin(); } }
 
-// --- Admin Webhooks & Settings ---
-// Overriding old buttons to inform users about the Netlify upgrade
-if(document.getElementById('saveWebhooksBtn')) {
-    document.getElementById('saveWebhooksBtn').addEventListener('click', () => {
-        alert("Webhooks are now managed securely via Netlify Environment Variables. Please refer to the Netlify Dashboard to update Webhook URLs.");
-    });
-}
-if(document.getElementById('btnTestReqWh')) {
-    document.getElementById('btnTestReqWh').addEventListener('click', () => {
-        alert("Webhooks are securely handled by Netlify Functions. To test, please submit a real Contract form on the public site.");
-    });
-}
-if(document.getElementById('btnTestAppWh')) {
-    document.getElementById('btnTestAppWh').addEventListener('click', () => {
-        alert("Webhooks are securely handled by Netlify Functions. To test, please submit a real Recruitment application on the public site.");
-    });
-}
-
-document.getElementById('costSettingsForm').addEventListener('submit', (e) => {
+document.getElementById('costSettingsForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     let d = getSiteData();
     d.costSettings = {
-        employeeHourlyRate: parseFloat(document.getElementById('cs_hourly').value),
-        baseOperationFee: parseFloat(document.getElementById('cs_base').value),
-        minimumHours: parseFloat(document.getElementById('cs_minHrs').value),
-        durationStep: parseFloat(document.getElementById('cs_stepHrs').value),
-        riskFees: {
-            Low: parseFloat(document.getElementById('cs_riskLow').value),
-            Medium: parseFloat(document.getElementById('cs_riskMed').value),
-            High: parseFloat(document.getElementById('cs_riskHigh').value),
-            Unknown: parseFloat(document.getElementById('cs_riskUnk').value)
-        }
+        employeeHourlyRate: parseFloat(document.getElementById('cs_hourly').value), baseOperationFee: parseFloat(document.getElementById('cs_base').value),
+        minimumHours: parseFloat(document.getElementById('cs_minHrs').value), durationStep: parseFloat(document.getElementById('cs_stepHrs').value),
+        riskFees: { Low: parseFloat(document.getElementById('cs_riskLow').value), Medium: parseFloat(document.getElementById('cs_riskMed').value), High: parseFloat(document.getElementById('cs_riskHigh').value), Unknown: parseFloat(document.getElementById('cs_riskUnk').value) }
     };
-    saveSiteData(d);
-    alert("COST CALCULATOR ALGORITHMS UPDATED.");
-    renderPublicSite();
+    await saveSiteData(d);
+    alert("COST CALCULATOR ALGORITHMS SECURED IN CLOUD.");
 });
 
-// --- Admin Data Editors ---
 let currentEditorType = ''; let currentEditingId = null;
 const editorModal = document.getElementById('itemEditorModal');
-if(document.querySelector('.close-editor-btn')) {
-    document.querySelector('.close-editor-btn').addEventListener('click', () => editorModal.style.display = 'none');
-}
+if(document.querySelector('.close-editor-btn')) { document.querySelector('.close-editor-btn').addEventListener('click', () => editorModal.style.display = 'none'); }
 
 function renderEditorList(type) {
     const data = getSiteData()[type];
@@ -463,8 +388,8 @@ function renderEditorList(type) {
         </div>`).join('');
 }
 
-window.toggleVisibility = (type, id) => { let d = getSiteData(); let item = d[type].find(i=>i.id===id); if(item){ item.visible = !item.visible; saveSiteData(d); refreshAdmin(); renderPublicSite(); } }
-window.deleteItem = (type, id) => { if(!confirm("DELETE RECORD?")) return; let d = getSiteData(); d[type] = d[type].filter(i=>i.id!==id); saveSiteData(d); refreshAdmin(); renderPublicSite(); }
+window.toggleVisibility = async (type, id) => { let d = getSiteData(); let item = d[type].find(i=>i.id===id); if(item){ item.visible = !item.visible; await saveSiteData(d); refreshAdmin(); } }
+window.deleteItem = async (type, id) => { if(!confirm("DELETE RECORD?")) return; let d = getSiteData(); d[type] = d[type].filter(i=>i.id!==id); await saveSiteData(d); refreshAdmin(); }
 
 window.openEditor = (type, id = null) => {
     currentEditorType = type; currentEditingId = id;
@@ -482,108 +407,50 @@ window.openEditor = (type, id = null) => {
     }
     document.getElementById('editorFields').innerHTML = fieldsHtml; editorModal.style.display = 'block';
 };
-
 window.editItem = (type, id) => openEditor(type, id);
 
 if(document.getElementById('itemEditorForm')) {
-    document.getElementById('itemEditorForm').addEventListener('submit', (e) => {
+    document.getElementById('itemEditorForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         let d = getSiteData();
         let item = currentEditingId ? d[currentEditorType].find(i=>i.id===currentEditingId) : { id: generateId(), visible: true };
         
         item.name = document.getElementById('ed_name')?.value || item.name;
-        
         if(currentEditorType === 'roster') { item.rank = document.getElementById('ed_rank').value; item.status = document.getElementById('ed_status').value; item.specialty = document.getElementById('ed_specialty').value; item.bio = document.getElementById('ed_bio').value; item.image = document.getElementById('ed_image').value; item.bookable = document.getElementById('ed_bookable').checked;}
         else if(currentEditorType === 'services') { item.icon = document.getElementById('ed_icon').value; item.desc = document.getElementById('ed_desc').value;}
         else if(currentEditorType === 'addons') { item.price = parseFloat(document.getElementById('ed_price').value); item.priceType = document.getElementById('ed_priceType').value; }
     
         if(!currentEditingId) d[currentEditorType].push(item);
-        saveSiteData(d); refreshAdmin(); renderPublicSite(); editorModal.style.display = 'none';
+        await saveSiteData(d); refreshAdmin(); editorModal.style.display = 'none';
     });
 }
 
-// ==========================================
-// BACKUP & EXPORT SYSTEM (The Marker System)
-// ==========================================
+// Cloud Backup System
 document.getElementById('exportDataBtn').addEventListener('click', () => {
     const allData = { siteData: getSiteData(), requests: getSubmissions('requests'), apps: getSubmissions('apps') };
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(allData, null, 2));
-    const dl = document.createElement('a'); dl.setAttribute("href", dataStr); dl.setAttribute("download", `BRP_Backup_${getTimestamp().replace(/\D/g,'')}.json`); dl.click();
+    const dl = document.createElement('a'); dl.setAttribute("href", dataStr); dl.setAttribute("download", `BRP_Cloud_Backup_${getTimestamp().replace(/\D/g,'')}.json`); dl.click();
 });
 
 document.getElementById('importDataBtn').addEventListener('click', () => {
     const file = document.getElementById('importDataFile').files[0];
     if(!file) return alert("Select a JSON file first.");
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = async (e) => {
         try {
             const data = JSON.parse(e.target.result);
-            if(data.siteData) saveSiteData(data.siteData);
-            if(data.requests) saveSubmissions('requests', data.requests);
-            if(data.apps) saveSubmissions('apps', data.apps);
-            alert("SYSTEM RESTORED SUCCESSFULLY.");
+            if(data.siteData) await saveSiteData(data.siteData);
+            if(data.requests) await saveSubmissions('requests', data.requests);
+            if(data.apps) await saveSubmissions('apps', data.apps);
+            alert("CLOUD DATABASE RESTORED SUCCESSFULLY.");
             refreshAdmin(); renderPublicSite();
         } catch(err) { alert("INVALID JSON FILE."); }
     };
     reader.readAsText(file);
 });
 
-document.getElementById('resetDemoBtn').addEventListener('click', () => {
+document.getElementById('resetDemoBtn').addEventListener('click', async () => {
     if(confirm("FACTORY RESET PUBLIC DATA? Contracts & Apps will be kept.")) {
-        saveSiteData(DEFAULT_DATA); refreshAdmin(); renderPublicSite();
+        await saveSiteData(DEFAULT_DATA); refreshAdmin(); renderPublicSite();
     }
 });
-
-// The Magic Export System
-document.getElementById('exportScriptBtn').addEventListener('click', async () => {
-    try {
-        const response = await fetch('script.js');
-        if (!response.ok) throw new Error('Fetch failed');
-        const scriptContent = await response.text();
-        patchAndDownloadScript(scriptContent);
-    } catch (error) {
-        alert("Could not read current script.js. Please run this from GitHub Pages or a local server, not directly from file://.\n\nUse the fallback option below.");
-        console.error(error);
-    }
-});
-
-document.getElementById('patchPastedScriptBtn').addEventListener('click', () => {
-    const scriptContent = document.getElementById('fallbackScriptInput').value;
-    if(!scriptContent.trim()) { alert("Please paste your script.js code into the text box first."); return; }
-    patchAndDownloadScript(scriptContent);
-});
-
-function patchAndDownloadScript(scriptContent) {
-    const currentData = getSiteData(); 
-    
-    // Ensure accurate object format
-    const updatedDefaultData = {
-        services: currentData.services || [],
-        addons: currentData.addons || [],
-        roster: currentData.roster || [],
-        contractQuestions: currentData.contractQuestions || [],
-        applicationQuestions: currentData.applicationQuestions || [],
-        costSettings: currentData.costSettings || {}
-    };
-
-    const startMarker = "/* === BLACK ROSE DEFAULT DATA START === */";
-    const endMarker = "/* === BLACK ROSE DEFAULT DATA END === */";
-    const startIndex = scriptContent.indexOf(startMarker);
-    const endIndex = scriptContent.indexOf(endMarker);
-
-    if (startIndex === -1 || endIndex === -1) {
-        alert("Export failed because the DEFAULT_DATA marker block was not found in the script.");
-        return;
-    }
-
-    const newBlock = `${startMarker}\nconst DEFAULT_DATA = ${JSON.stringify(updatedDefaultData, null, 4)};\n${endMarker}`;
-    const patchedScript = scriptContent.substring(0, startIndex) + newBlock + scriptContent.substring(endIndex + endMarker.length);
-
-    const blob = new Blob([patchedScript], { type: "application/javascript" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = "script.js";
-    document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-    
-    alert("SUCCESS! script.js has been generated. Upload this file to your repository to make changes public.");
-}
