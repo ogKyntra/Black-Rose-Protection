@@ -1,28 +1,144 @@
 /* === BLACK ROSE DEFAULT DATA START === */
 const DEFAULT_DATA = {
     "services": [
-        { "id": "s1", "name": "Personal Protection", "desc": "Close-quarters executive protection and escorting.", "price": "Varies by risk level", "icon": "[ P-01 ]", "visible": true },
-        { "id": "s2", "name": "Event Security", "desc": "Crowd control, access management, and threat mitigation.", "price": "Varies by scale", "icon": "[ E-02 ]", "visible": true },
-        { "id": "s3", "name": "Business Security", "desc": "Static guarding and active monitoring for establishments.", "price": "Varies by footprint", "icon": "[ B-03 ]", "visible": true },
-        { "id": "s4", "name": "Property Patrols", "desc": "Randomized armed patrols for private estates and compounds.", "price": "Starting at $75,000", "icon": "[ P-04 ]", "visible": true },
-        { "id": "s5", "name": "High-Risk Transport", "desc": "Secure movement of VIPs or sensitive cargo across hostile zones.", "price": "Custom Quote", "icon": "[ T-05 ]", "visible": true },
-        { "id": "s6", "name": "Private Escort Service", "desc": "Discreet companionship combined with lethal proficiency.", "price": "Starting at $100,000", "icon": "[ E-06 ]", "visible": true },
-        { "id": "s7", "name": "Emergency Response", "desc": "Rapid deployment to active hostile situations.", "price": "$150,000+ Callout", "icon": "[ R-07 ]", "visible": true },
-        { "id": "s8", "name": "Venue Security", "desc": "Doorstaff and interior oversight for clubs and lounges.", "price": "Contract based", "icon": "[ V-08 ]", "visible": true }
+        {
+            "id": "s1",
+            "name": "Personal Protection",
+            "desc": "Close-quarters executive protection and escorting.",
+            "price": "Varies by risk level",
+            "icon": "[ P-01 ]",
+            "visible": true
+        },
+        {
+            "id": "s2",
+            "name": "Event Security",
+            "desc": "Crowd control, access management, and threat mitigation.",
+            "price": "Varies by scale",
+            "icon": "[ E-02 ]",
+            "visible": true
+        },
+        {
+            "id": "s3",
+            "name": "Business Security",
+            "desc": "Static guarding and active monitoring for establishments.",
+            "price": "Varies by footprint",
+            "icon": "[ B-03 ]",
+            "visible": true
+        },
+        {
+            "id": "s4",
+            "name": "Property Patrols",
+            "desc": "Randomized armed patrols for private estates and compounds.",
+            "price": "Starting at $75,000",
+            "icon": "[ P-04 ]",
+            "visible": true
+        },
+        {
+            "id": "s5",
+            "name": "High-Risk Transport",
+            "desc": "Secure movement of VIPs or sensitive cargo across hostile zones.",
+            "price": "Custom Quote",
+            "icon": "[ T-05 ]",
+            "visible": true
+        },
+        {
+            "id": "s6",
+            "name": "Private Escort Service",
+            "desc": "Discreet companionship combined with lethal proficiency.",
+            "price": "Starting at $100,000",
+            "icon": "[ E-06 ]",
+            "visible": true
+        },
+        {
+            "id": "s7",
+            "name": "Emergency Response",
+            "desc": "Rapid deployment to active hostile situations.",
+            "price": "$150,000+ Callout",
+            "icon": "[ R-07 ]",
+            "visible": true
+        },
+        {
+            "id": "s8",
+            "name": "Venue Security",
+            "desc": "Doorstaff and interior oversight for clubs and lounges.",
+            "price": "Contract based",
+            "icon": "[ V-08 ]",
+            "visible": true
+        }
     ],
     "addons": [
-        { "id": "a2", "name": "Second Vehicle / Convoy Support", "desc": "", "price": 100000, "priceType": "flat", "visible": true },
-        { "id": "a3", "name": "Emergency Same-Day Callout", "desc": "", "price": 150000, "priceType": "flat", "visible": true },
-        { "id": "a4", "name": "Armed / High-Risk Detail", "desc": "", "price": 150000, "priceType": "flat", "visible": true },
-        { "id": "a5", "name": "Out-of-City Travel", "desc": "", "price": 75000, "priceType": "flat", "visible": true },
-        { "id": "a6", "name": "Extended Equipment Loadout", "desc": "", "price": 50000, "priceType": "flat", "visible": true },
-        { "id": "a7", "name": "Priority Contract Handling", "desc": "", "price": 100000, "priceType": "flat", "visible": true }
+        {
+            "id": "a2",
+            "name": "Second Vehicle / Convoy Support",
+            "desc": "",
+            "price": 100000,
+            "priceType": "flat",
+            "visible": true
+        },
+        {
+            "id": "a3",
+            "name": "Emergency Same-Day Callout",
+            "desc": "",
+            "price": 150000,
+            "priceType": "flat",
+            "visible": true
+        },
+        {
+            "id": "a4",
+            "name": "Armed / High-Risk Detail",
+            "desc": "",
+            "price": 150000,
+            "priceType": "flat",
+            "visible": true
+        },
+        {
+            "id": "a5",
+            "name": "Out-of-City Travel",
+            "desc": "",
+            "price": 75000,
+            "priceType": "flat",
+            "visible": true
+        },
+        {
+            "id": "a6",
+            "name": "Extended Equipment Loadout",
+            "desc": "",
+            "price": 50000,
+            "priceType": "flat",
+            "visible": true
+        },
+        {
+            "id": "a7",
+            "name": "Priority Contract Handling",
+            "desc": "",
+            "price": 100000,
+            "priceType": "flat",
+            "visible": true
+        }
     ],
     "roster": [
-        { "id": "r1", "name": "Roxy Rose", "rank": "Founder / Director", "status": "On Duty", "specialty": "Operations / High-Risk Details", "bio": "The architect of Black Rose. Lethal, precise, and demands absolute loyalty.", "image": "", "bookable": true, "visible": true },
-        { "id": "r2", "name": "Jimmy Egan", "rank": "Senior Protection Officer", "status": "Available", "specialty": "Close Protection / Tactical Driving", "bio": "Veteran operator with a zero-failure rate on executive protection details.", "image": "", "bookable": true, "visible": true },
-        { "id": "r3", "name": "Rose Unit", "rank": "Security Officer", "status": "Available", "specialty": "Venue Security / Patrols", "bio": "Standard trained operative capable of handling property and crowd security.", "image": "", "bookable": true, "visible": true },
-        { "id": "r4", "name": "Open Position", "rank": "Recruit", "status": "In Training", "specialty": "TBD", "bio": "We are currently seeking capable individuals who thrive under pressure.", "image": "", "bookable": false, "visible": true }
+        {
+            "id": "r1",
+            "name": "Roxy Rose",
+            "rank": "Founder / Director",
+            "status": "On Duty",
+            "specialty": "Operations / High-Risk Details",
+            "bio": "The architect of Black Rose. Lethal, precise, and demands absolute loyalty.",
+            "image": "https://cdn.discordapp.com/attachments/1448494461012152424/1525109534014570517/Screenshot_2026-07-07_144116.png?ex=6a523070&is=6a50def0&hm=84027bd2680de308a9972b48df82c77f0da67a7ce8f7f1592d7ead76a1ba5f75&",
+            "bookable": true,
+            "visible": true
+        },
+        {
+            "id": "r2",
+            "name": "Jimmy Egan",
+            "rank": "Chief Operating Officer",
+            "status": "Available",
+            "specialty": "Close Protection / Tactical Driving",
+            "bio": "Veteran operator with a zero-failure rate on executive protection details.",
+            "image": "",
+            "bookable": true,
+            "visible": true
+        }
     ],
     "contractQuestions": [],
     "applicationQuestions": [],
