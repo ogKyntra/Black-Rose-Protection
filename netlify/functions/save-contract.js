@@ -10,7 +10,7 @@ exports.handler = async (event) => {
         const store = getStore("brp_database");
         
         // Append to Blobs
-        let requests = (await store.get("requests", { type: "json" })) || [];
+        let requests = (await store.get("requests", { type: "json", consistency: "strong" })) || [];
         requests.push(data);
         await store.setJSON("requests", requests);
 
@@ -26,12 +26,16 @@ exports.handler = async (event) => {
                     fields: [
                         { name: "Client", value: data.name, inline: true },
                         { name: "Phone", value: data.phone, inline: true },
+                        { name: "Business/Org", value: data.business || "N/A", inline: true },
                         { name: "Service", value: data.service, inline: true },
                         { name: "Date & Time", value: `${data.date} @ ${data.time}`, inline: true },
                         { name: "Duration", value: `${data.duration} Hrs`, inline: true },
                         { name: "Location", value: data.location, inline: true },
                         { name: "Risk Level", value: data.risk, inline: true },
+                        { name: "Staff Requested", value: `${data.staff}`, inline: true },
+                        { name: "Vehicle Support", value: data.vehicle, inline: true },
                         { name: "Est. Cost", value: `\`${data.totalCost}\``, inline: true },
+                        { name: "Contact Pref.", value: data.contactPref, inline: true },
                         { name: "Extra Intel", value: data.details || "None", inline: false }
                     ],
                     timestamp: new Date().toISOString(),

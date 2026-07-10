@@ -281,6 +281,18 @@ const adminModal = document.getElementById('adminModal');
 document.getElementById('openAdminBtn').addEventListener('click', () => adminModal.style.display = 'block');
 document.querySelector('.close-btn').addEventListener('click', () => adminModal.style.display = 'none');
 
+async function fetchSubmissions() {
+    const res = await fetch('/api/get-submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ passcode: ADMIN_PASSCODE })
+    });
+    if (!res.ok) throw new Error("Authentication failed");
+    const data = await res.json();
+    CLOUD_STATE.requests = data.requests || [];
+    CLOUD_STATE.apps = data.apps || [];
+}
+
 document.getElementById('loginBtn').addEventListener('click', async () => {
     const pass = document.getElementById('adminPass').value;
     if (pass.length > 0) { 
@@ -288,17 +300,7 @@ document.getElementById('loginBtn').addEventListener('click', async () => {
         document.getElementById('loginBtn').textContent = "[ AUTHENTICATING... ]";
         
         try {
-            const res = await fetch('/api/get-submissions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ passcode: ADMIN_PASSCODE })
-            });
-
-            if (!res.ok) throw new Error("Authentication failed");
-            const data = await res.json();
-            CLOUD_STATE.requests = data.requests || [];
-            CLOUD_STATE.apps = data.apps || [];
-
+            await fetchSubmissions();
             document.getElementById('adminLogin').style.display = 'none';
             document.getElementById('adminDashboard').style.display = 'block';
             refreshAdmin();
@@ -307,6 +309,18 @@ document.getElementById('loginBtn').addEventListener('click', async () => {
             document.getElementById('loginBtn').textContent = "ACCESS TERMINAL";
         }
     } else { document.getElementById('loginError').textContent = "[ ENTER PASSCODE ]"; }
+});
+
+document.getElementById('refreshDataBtn')?.addEventListener('click', async () => {
+    const btn = document.getElementById('refreshDataBtn');
+    btn.textContent = "↻ ..."; btn.disabled = true;
+    try {
+        await fetchSubmissions();
+        refreshAdmin();
+    } catch(e) {
+        alert("REFRESH FAILED: " + e.message);
+    }
+    btn.textContent = "↻ Refresh"; btn.disabled = false;
 });
 
 document.querySelectorAll('.tab-btn').forEach(btn => {

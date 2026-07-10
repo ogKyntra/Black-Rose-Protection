@@ -9,7 +9,7 @@ exports.handler = async (event) => {
         connectLambda(event);
         const store = getStore("brp_database");
         
-        let apps = (await store.get("apps", { type: "json" })) || [];
+        let apps = (await store.get("apps", { type: "json", consistency: "strong" })) || [];
         apps.push(data);
         await store.setJSON("apps", apps);
 
@@ -27,6 +27,8 @@ exports.handler = async (event) => {
                         { name: "Role", value: data.role, inline: true },
                         { name: "Availability", value: data.availability, inline: true },
                         { name: "High-Risk OK?", value: data.highRisk, inline: true },
+                        { name: "Strengths", value: data.strengths, inline: true },
+                        { name: "Weaknesses", value: data.weaknesses, inline: true },
                         { name: "Experience", value: data.experience, inline: false },
                         { name: "Why Join", value: data.whyJoin, inline: false }
                     ],

@@ -13,8 +13,8 @@ exports.handler = async (event) => {
 
         connectLambda(event);
         const store = getStore("brp_database");
-        const requests = (await store.get("requests", { type: "json" })) || [];
-        const apps = (await store.get("apps", { type: "json" })) || [];
+        const requests = (await store.get("requests", { type: "json", consistency: "strong" })) || [];
+        const apps = (await store.get("apps", { type: "json", consistency: "strong" })) || [];
 
         return { statusCode: 200, body: JSON.stringify({ requests, apps }) };
     } catch (error) {
