@@ -1,144 +1,29 @@
 /* === BLACK ROSE DEFAULT DATA START === */
 const DEFAULT_DATA = {
     "services": [
-        {
-            "id": "s1",
-            "name": "Personal Protection",
-            "desc": "Close-quarters executive protection and escorting.",
-            "price": "Varies by risk level",
-            "icon": "[ P-01 ]",
-            "visible": true
-        },
-        {
-            "id": "s2",
-            "name": "Event Security",
-            "desc": "Crowd control, access management, and threat mitigation.",
-            "price": "Varies by scale",
-            "icon": "[ E-02 ]",
-            "visible": true
-        },
-        {
-            "id": "s3",
-            "name": "Business Security",
-            "desc": "Static guarding and active monitoring for establishments.",
-            "price": "Varies by footprint",
-            "icon": "[ B-03 ]",
-            "visible": true
-        },
-        {
-            "id": "s4",
-            "name": "Property Patrols",
-            "desc": "Randomized armed patrols for private estates and compounds.",
-            "price": "Starting at $75,000",
-            "icon": "[ P-04 ]",
-            "visible": true
-        },
-        {
-            "id": "s5",
-            "name": "High-Risk Transport",
-            "desc": "Secure movement of VIPs or sensitive cargo across hostile zones.",
-            "price": "Custom Quote",
-            "icon": "[ T-05 ]",
-            "visible": true
-        },
-        {
-            "id": "s6",
-            "name": "Private Escort Service",
-            "desc": "Discreet companionship combined with lethal proficiency.",
-            "price": "Starting at $100,000",
-            "icon": "[ E-06 ]",
-            "visible": true
-        },
-        {
-            "id": "s7",
-            "name": "Emergency Response",
-            "desc": "Rapid deployment to active hostile situations.",
-            "price": "$150,000+ Callout",
-            "icon": "[ R-07 ]",
-            "visible": true
-        },
-        {
-            "id": "s8",
-            "name": "Venue Security",
-            "desc": "Doorstaff and interior oversight for clubs and lounges.",
-            "price": "Contract based",
-            "icon": "[ V-08 ]",
-            "visible": true
-        }
+        { "id": "s1", "name": "Personal Protection", "desc": "Close-quarters executive protection and escorting.", "price": "Varies by risk level", "icon": "[ P-01 ]", "visible": true },
+        { "id": "s2", "name": "Event Security", "desc": "Crowd control, access management, and threat mitigation.", "price": "Varies by scale", "icon": "[ E-02 ]", "visible": true },
+        { "id": "s3", "name": "Business Security", "desc": "Static guarding and active monitoring for establishments.", "price": "Varies by footprint", "icon": "[ B-03 ]", "visible": true },
+        { "id": "s4", "name": "Property Patrols", "desc": "Randomized armed patrols for private estates and compounds.", "price": "Starting at $75,000", "icon": "[ P-04 ]", "visible": true },
+        { "id": "s5", "name": "High-Risk Transport", "desc": "Secure movement of VIPs or sensitive cargo across hostile zones.", "price": "Custom Quote", "icon": "[ T-05 ]", "visible": true },
+        { "id": "s6", "name": "Private Escort Service", "desc": "Discreet companionship combined with lethal proficiency.", "price": "Starting at $100,000", "icon": "[ E-06 ]", "visible": true },
+        { "id": "s7", "name": "Emergency Response", "desc": "Rapid deployment to active hostile situations.", "price": "$150,000+ Callout", "icon": "[ R-07 ]", "visible": true },
+        { "id": "s8", "name": "Venue Security", "desc": "Doorstaff and interior oversight for clubs and lounges.", "price": "Contract based", "icon": "[ V-08 ]", "visible": true }
     ],
     "addons": [
-        {
-            "id": "a2",
-            "name": "Second Vehicle / Convoy Support",
-            "desc": "",
-            "price": 100000,
-            "priceType": "flat",
-            "visible": true
-        },
-        {
-            "id": "a3",
-            "name": "Emergency Same-Day Callout",
-            "desc": "",
-            "price": 150000,
-            "priceType": "flat",
-            "visible": true
-        },
-        {
-            "id": "a4",
-            "name": "Armed / High-Risk Detail",
-            "desc": "",
-            "price": 150000,
-            "priceType": "flat",
-            "visible": true
-        },
-        {
-            "id": "a5",
-            "name": "Out-of-City Travel",
-            "desc": "",
-            "price": 75000,
-            "priceType": "flat",
-            "visible": true
-        },
-        {
-            "id": "a6",
-            "name": "Extended Equipment Loadout",
-            "desc": "",
-            "price": 50000,
-            "priceType": "flat",
-            "visible": true
-        },
-        {
-            "id": "a7",
-            "name": "Priority Contract Handling",
-            "desc": "",
-            "price": 100000,
-            "priceType": "flat",
-            "visible": true
-        }
+        { "id": "a1", "name": "Marked Security Vehicle", "desc": "", "price": 50000, "priceType": "flat", "visible": true },
+        { "id": "a2", "name": "Second Vehicle / Convoy Support", "desc": "", "price": 100000, "priceType": "flat", "visible": true },
+        { "id": "a3", "name": "Emergency Same-Day Callout", "desc": "", "price": 150000, "priceType": "flat", "visible": true },
+        { "id": "a4", "name": "Armed / High-Risk Detail", "desc": "", "price": 150000, "priceType": "flat", "visible": true },
+        { "id": "a5", "name": "Out-of-City Travel", "desc": "", "price": 75000, "priceType": "flat", "visible": true },
+        { "id": "a6", "name": "Extended Equipment Loadout", "desc": "", "price": 50000, "priceType": "flat", "visible": true },
+        { "id": "a7", "name": "Priority Contract Handling", "desc": "", "price": 100000, "priceType": "flat", "visible": true }
     ],
     "roster": [
-        {
-            "id": "r1",
-            "name": "Roxy Rose",
-            "rank": "Founder / Director",
-            "status": "On Duty",
-            "specialty": "Operations / High-Risk Details",
-            "bio": "The architect of Black Rose. Lethal, precise, and demands absolute loyalty.",
-            "image": "https://cdn.discordapp.com/attachments/1448494461012152424/1525130974848090264/Screenshot_2026-07-10_142545.png?ex=6a524467&is=6a50f2e7&hm=7dd025bd760266cd73541ad331d8cecb4ae2e1eab6e1e382ddef0ab90726575c&",
-            "bookable": true,
-            "visible": true
-        },
-        {
-            "id": "r2",
-            "name": "Jimmy Egan",
-            "rank": "Chief Operating Officer",
-            "status": "Available",
-            "specialty": "Close Protection / Tactical Driving",
-            "bio": "Veteran operator with a zero-failure rate on executive protection details.",
-            "image": "",
-            "bookable": true,
-            "visible": true
-        }
+        { "id": "r1", "name": "Roxy Rose", "rank": "Founder / Director", "status": "On Duty", "specialty": "Operations / High-Risk Details", "bio": "The architect of Black Rose. Lethal, precise, and demands absolute loyalty.", "image": "", "bookable": true, "visible": true },
+        { "id": "r2", "name": "Jimmy Egan", "rank": "Senior Protection Officer", "status": "Available", "specialty": "Close Protection / Tactical Driving", "bio": "Veteran operator with a zero-failure rate on executive protection details.", "image": "", "bookable": true, "visible": true },
+        { "id": "r3", "name": "Rose Unit", "rank": "Security Officer", "status": "Available", "specialty": "Venue Security / Patrols", "bio": "Standard trained operative capable of handling property and crowd security.", "image": "", "bookable": true, "visible": true },
+        { "id": "r4", "name": "Open Position", "rank": "Recruit", "status": "In Training", "specialty": "TBD", "bio": "We are currently seeking capable individuals who thrive under pressure.", "image": "", "bookable": false, "visible": true }
     ],
     "contractQuestions": [],
     "applicationQuestions": [],
@@ -305,27 +190,14 @@ const observer = new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// ==========================================
-// DISCORD WEBHOOK SYSTEM
-// ==========================================
-async function sendToDiscord(url, embed) {
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ embeds: [embed] })
-        });
-        return response.ok;
-    } catch(e) { return false; }
-}
 
 // ==========================================
-// FORM SUBMISSIONS
+// FORM SUBMISSIONS (WITH NETLIFY FUNCTIONS)
 // ==========================================
 document.getElementById('requestForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('button'); 
-    btn.disabled = true; btn.textContent = "[ SUBMITTING... ]";
+    btn.disabled = true; btn.textContent = "[ TRANSMITTING TO NETLIFY... ]";
     
     // Ensure accurate final calculation
     calculateTotal();
@@ -341,43 +213,37 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
         staff: document.getElementById('reqStaff').value, vehicle: document.getElementById('reqVehicle').value,
         risk: document.getElementById('reqRisk').value, details: document.getElementById('reqDetails').value,
         contactPref: document.getElementById('reqContactPref').value,
-        pricing: currentPriceBreakdown
+        pricing: currentPriceBreakdown,
+        totalCost: document.getElementById('calcTotal').innerText // Captures calculated UI total for backend
     };
     
+    // Save locally for Admin Panel access
     const reqs = getSubmissions('requests'); reqs.push(reqData); saveSubmissions('requests', reqs);
     let statusMsg = "CONTRACT SAVED LOCALLY.";
 
-    const settings = JSON.parse(localStorage.getItem('brp_settings') || '{}');
-    if (settings.enableReqHook && settings.reqUrl) {
-        const embed = {
-            title: "🚨 New Black Rose Contract Request",
-            color: 9109504, // Dark Crimson
-            fields: [
-                { name: "Client Name", value: reqData.name, inline: true },
-                { name: "Phone Number", value: reqData.phone, inline: true },
-                { name: "Business / Org", value: reqData.business || "N/A", inline: true },
-                { name: "Service Needed", value: reqData.service, inline: true },
-                { name: "Date & Time Needed", value: `${reqData.date} @ ${reqData.time}`, inline: true },
-                { name: "Location", value: reqData.location, inline: true },
-                { name: "Duration", value: `${reqData.duration} Hours`, inline: true },
-                { name: "Employees Req.", value: reqData.staff, inline: true },
-                { name: "Risk Level", value: reqData.risk, inline: true },
-                { name: "Vehicle Support", value: reqData.vehicle, inline: true },
-                { name: "Selected Add-ons", value: reqData.pricing.selectedAddonNames.join(', ') || "None", inline: false },
-                { name: "Estimated Total", value: formatMoney(reqData.pricing.estimatedTotal), inline: false },
-                { name: "Price Breakdown", value: `Base: ${formatMoney(reqData.pricing.baseFee)}\nEmp: ${formatMoney(reqData.pricing.employeeCost)}\nRisk: ${formatMoney(reqData.pricing.riskFee)}\nAddons: ${formatMoney(reqData.pricing.addonTotal)}`, inline: false },
-                { name: "Extra Details", value: reqData.details || "None", inline: false },
-                { name: "Contact Preference", value: reqData.contactPref, inline: true },
-                { name: "Submission ID", value: reqData.id, inline: true }
-            ],
-            footer: { text: `Black Rose Protection Contract System • Timestamp: ${ts}` }
-        };
-        const ok = await sendToDiscord(settings.reqUrl, embed);
-        statusMsg = ok ? "Request saved and sent to Discord." : "Request saved locally, but Discord webhook failed.";
+    const statusEl = document.getElementById('reqStatus');
+
+    // Secure Netlify Backend Transmission
+    try {
+        const response = await fetch('/.netlify/functions/submit-contract', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqData)
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            statusMsg = `> ${result.message}`;
+            statusEl.className = "form-status success-text";
+        } else {
+            throw new Error(result.error || "Transmission failure.");
+        }
+    } catch (err) {
+        statusMsg = `> ERROR: ${err.message} (Data saved to local terminal fallback)`;
+        statusEl.className = "form-status error-text";
     }
 
-    const statusEl = document.getElementById('reqStatus');
-    statusEl.innerHTML = `<span class='${statusMsg.includes("Discord webhook failed")?"error-text":"success-text"}'>${statusMsg}</span>`;
+    statusEl.innerHTML = `<span>${statusMsg}</span>`;
     e.target.reset(); 
     calculateTotal(); // Reset calc display
     setTimeout(() => { btn.disabled = false; btn.textContent = "[ TRANSMIT CONTRACT REQUEST ]"; }, 2000);
@@ -386,7 +252,7 @@ document.getElementById('requestForm').addEventListener('submit', async (e) => {
 document.getElementById('applyForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = e.target.querySelector('button'); 
-    btn.disabled = true; btn.textContent = "[ SUBMITTING... ]";
+    btn.disabled = true; btn.textContent = "[ SUBMITTING TO NETLIFY... ]";
     
     const ts = getTimestamp();
     const sId = generateId();
@@ -394,42 +260,43 @@ document.getElementById('applyForm').addEventListener('submit', async (e) => {
     const appData = {
         id: sId, timestamp: ts, status: 'New', notes: '',
         name: document.getElementById('appName').value, phone: document.getElementById('appPhone').value,
-        experience: document.getElementById('appExp').value, why: document.getElementById('appWhy').value,
+        experience: document.getElementById('appExp').value, whyJoin: document.getElementById('appWhy').value,
         availability: document.getElementById('appAvailability').value, strengths: document.getElementById('appStrengths').value,
         weaknesses: document.getElementById('appWeaknesses').value, role: document.getElementById('appRole').value,
         highRisk: document.getElementById('appHighRisk').value
     };
+
+    // Save locally for Admin Panel access
     const apps = getSubmissions('apps'); apps.push(appData); saveSubmissions('apps', apps);
     let statusMsg = "APPLICATION FILED LOCALLY.";
 
-    const settings = JSON.parse(localStorage.getItem('brp_settings') || '{}');
-    if (settings.enableAppHook && settings.appUrl) {
-        const embed = {
-            title: "📄 New Black Rose Recruitment Application",
-            color: 9109504,
-            fields: [
-                { name: "Applicant Name", value: appData.name, inline: true },
-                { name: "Phone Number", value: appData.phone, inline: true },
-                { name: "Preferred Role", value: appData.role, inline: true },
-                { name: "Availability", value: appData.availability, inline: true },
-                { name: "High-Risk Work OK?", value: appData.highRisk, inline: true },
-                { name: "Submission ID", value: appData.id, inline: true },
-                { name: "Previous Experience", value: appData.experience, inline: false },
-                { name: "Why Join?", value: appData.why, inline: false },
-                { name: "Strengths", value: appData.strengths, inline: true },
-                { name: "Weaknesses", value: appData.weaknesses, inline: true }
-            ],
-            footer: { text: `Black Rose Protection Recruitment System • Timestamp: ${ts}` }
-        };
-        const ok = await sendToDiscord(settings.appUrl, embed);
-        statusMsg = ok ? "Application saved and sent to Discord." : "Application saved locally, but Discord webhook failed.";
+    const statusEl = document.getElementById('appStatus');
+
+    // Secure Netlify Backend Transmission
+    try {
+        const response = await fetch('/.netlify/functions/submit-application', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(appData)
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            statusMsg = `> ${result.message}`;
+            statusEl.className = "form-status success-text";
+        } else {
+            throw new Error(result.error || "Processing error.");
+        }
+    } catch (err) {
+        statusMsg = `> UPLINK ERROR: ${err.message} (Data saved to local terminal fallback)`;
+        statusEl.className = "form-status error-text";
     }
 
-    const statusEl = document.getElementById('appStatus');
-    statusEl.innerHTML = `<span class='${statusMsg.includes("Discord webhook failed")?"error-text":"success-text"}'>${statusMsg}</span>`;
+    statusEl.innerHTML = `<span>${statusMsg}</span>`;
     e.target.reset(); 
     setTimeout(() => { btn.disabled = false; btn.textContent = "[ SUBMIT APPLICATION ]"; }, 2000);
 });
+
 
 // ==========================================
 // ADMIN PANEL LOGIC
@@ -473,13 +340,6 @@ function refreshAdmin() {
     document.getElementById('cs_riskMed').value = cs.riskFees.Medium;
     document.getElementById('cs_riskHigh').value = cs.riskFees.High;
     document.getElementById('cs_riskUnk').value = cs.riskFees.Unknown;
-
-    // Load Webhooks
-    const settings = JSON.parse(localStorage.getItem('brp_settings') || '{}');
-    document.getElementById('wh_req_enable').checked = settings.enableReqHook || false;
-    document.getElementById('wh_req_url').value = settings.reqUrl || '';
-    document.getElementById('wh_app_enable').checked = settings.enableAppHook || false;
-    document.getElementById('wh_app_url').value = settings.appUrl || '';
 }
 
 function renderAdminStats() {
@@ -514,11 +374,12 @@ function renderSubmissions(type) {
             <div class="sub-field"><strong>Details:</strong> ${sub.details}</div>
             <div class="sub-field"><strong>Contact Pref:</strong> ${sub.contactPref}</div>`;
         } else {
+            // Updated to reflect the appWhy -> whyJoin variable change for Netlify
             detailsHtml = `
             <div class="sub-field"><strong>Applicant:</strong> ${sub.name} (${sub.phone}) | <strong>Role:</strong> ${sub.role}</div>
             <div class="sub-field"><strong>Avail:</strong> ${sub.availability} | <strong>High Risk OK:</strong> ${sub.highRisk}</div>
             <div class="sub-field"><strong>Exp:</strong> ${sub.experience}</div>
-            <div class="sub-field"><strong>Why Join:</strong> ${sub.why}</div>
+            <div class="sub-field"><strong>Why Join:</strong> ${sub.whyJoin}</div>
             <div class="sub-field"><strong>Str:</strong> ${sub.strengths} | <strong>Wk:</strong> ${sub.weaknesses}</div>`;
         }
 
@@ -543,29 +404,22 @@ window.deleteSub = (type, id) => { if(!confirm("PURGE RECORD?")) return; let sub
 window.clearSubmissions = (type) => { if(confirm("PURGE ALL DATA IN THIS CATEGORY?")) { saveSubmissions(type, []); refreshAdmin(); } }
 
 // --- Admin Webhooks & Settings ---
-document.getElementById('saveWebhooksBtn').addEventListener('click', () => {
-    localStorage.setItem('brp_settings', JSON.stringify({
-        enableReqHook: document.getElementById('wh_req_enable').checked,
-        reqUrl: document.getElementById('wh_req_url').value,
-        enableAppHook: document.getElementById('wh_app_enable').checked,
-        appUrl: document.getElementById('wh_app_url').value
-    }));
-    alert("WEBHOOK CONFIGURATION SAVED LOCALLY.");
-});
-
-document.getElementById('btnTestReqWh').addEventListener('click', async () => {
-    const url = document.getElementById('wh_req_url').value;
-    if(!url) return alert("Enter URL first.");
-    const ok = await sendToDiscord(url, { title: "🔧 Webhook Test", description: "BRP Contract network connection successful.", color: 9109504 });
-    alert(ok ? "SUCCESS!" : "FAILED. Check URL.");
-});
-
-document.getElementById('btnTestAppWh').addEventListener('click', async () => {
-    const url = document.getElementById('wh_app_url').value;
-    if(!url) return alert("Enter URL first.");
-    const ok = await sendToDiscord(url, { title: "🔧 Webhook Test", description: "BRP Recruitment network connection successful.", color: 9109504 });
-    alert(ok ? "SUCCESS!" : "FAILED. Check URL.");
-});
+// Overriding old buttons to inform users about the Netlify upgrade
+if(document.getElementById('saveWebhooksBtn')) {
+    document.getElementById('saveWebhooksBtn').addEventListener('click', () => {
+        alert("Webhooks are now managed securely via Netlify Environment Variables. Please refer to the Netlify Dashboard to update Webhook URLs.");
+    });
+}
+if(document.getElementById('btnTestReqWh')) {
+    document.getElementById('btnTestReqWh').addEventListener('click', () => {
+        alert("Webhooks are securely handled by Netlify Functions. To test, please submit a real Contract form on the public site.");
+    });
+}
+if(document.getElementById('btnTestAppWh')) {
+    document.getElementById('btnTestAppWh').addEventListener('click', () => {
+        alert("Webhooks are securely handled by Netlify Functions. To test, please submit a real Recruitment application on the public site.");
+    });
+}
 
 document.getElementById('costSettingsForm').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -731,5 +585,5 @@ function patchAndDownloadScript(scriptContent) {
     a.href = url; a.download = "script.js";
     document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
     
-    alert("SUCCESS! script.js has been generated. Upload this file to your GitHub repository to make changes public.");
+    alert("SUCCESS! script.js has been generated. Upload this file to your repository to make changes public.");
 }
