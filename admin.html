@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRP Command</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="admin">
+  <div class="admin-login-wrap" id="adminLogin">
+    <div class="login-card panel">
+      <img src="assets/icon.png" alt="Black Rose Protection icon" />
+      <h1>BRP Command</h1>
+      <p>Staff access only.</p>
+      <form id="loginForm">
+        <label for="passcode">Passcode</label>
+        <input id="passcode" type="password" placeholder="Enter passcode" autocomplete="current-password" />
+        <button class="btn btn-primary full-width" type="submit">Access Command</button>
+        <div class="form-message" id="loginMessage"></div>
+      </form>
+      <a class="quiet-link" href="index.html">Return to Public Site</a>
+    </div>
+  </div>
+
+  <div class="admin-shell hidden" id="adminShell">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="#overview" data-admin-tab="overview">
+        <img src="assets/icon.png" alt="BRP icon" />
+        <span><strong>BRP</strong><small>Command</small></span>
+      </a>
+      <nav class="admin-menu">
+        <button data-admin-tab="overview" class="active">Overview</button>
+        <button data-admin-tab="site">Site Settings</button>
+        <button data-admin-tab="submissions">Submissions</button>
+        <button data-admin-tab="services">Services & Add-ons</button>
+        <button data-admin-tab="roster">Roster</button>
+        <button data-admin-tab="questions">Form Questions</button>
+        <button data-admin-tab="webhooks">Discord Webhooks</button>
+        <button data-admin-tab="export">Export script.js</button>
+      </nav>
+      <div class="admin-side-actions">
+        <a class="btn btn-secondary full-width" href="index.html">View Public Site</a>
+        <a class="btn btn-secondary full-width" id="adminEmailLink" href="#" target="_blank" rel="noopener">Open Emails</a>
+        <button class="btn btn-danger full-width" id="logoutBtn" type="button">Logout</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <div>
+          <span class="eyebrow">Black Rose Protection</span>
+          <h1 id="adminTitle">Overview</h1>
+        </div>
+        <button class="btn btn-primary" id="saveAdminBtn" type="button">Save Changes</button>
+      </div>
+
+      <section class="admin-section active" data-section="overview"></section>
+      <section class="admin-section" data-section="site"></section>
+      <section class="admin-section" data-section="submissions"></section>
+      <section class="admin-section" data-section="services"></section>
+      <section class="admin-section" data-section="roster"></section>
+      <section class="admin-section" data-section="questions"></section>
+      <section class="admin-section" data-section="webhooks"></section>
+      <section class="admin-section" data-section="export"></section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

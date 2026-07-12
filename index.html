@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Rose Protection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="public">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Black Rose Protection home">
+        <img src="assets/icon.png" alt="Black Rose Protection logo" class="brand-icon" />
+        <span class="brand-text">
+          <span class="brand-title">Black Rose</span>
+          <span class="brand-subtitle">Protection</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#roster">Roster</a>
+        <a href="#request">Request Protection</a>
+        <a href="#apply">Apply</a>
+        <a id="emailNavLink" href="#" target="_blank" rel="noopener">Join the Emails</a>
+        <a class="nav-pill" href="admin.html">Staff Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-art reveal">
+          <div class="orbital-logo">
+            <img src="assets/logo.png" alt="Black Rose Protection emblem" />
+          </div>
+        </div>
+        <div class="hero-content reveal">
+          <div class="eyebrow">Private Security • Contract Protection • Discretion</div>
+          <h1 id="heroTitle">Black Rose Protection</h1>
+          <p class="tagline" id="heroTagline">Protecting what matters, with precision and loyalty.</p>
+          <p class="hero-copy" id="heroIntro">Elite private protection and security solutions for individuals, businesses, events, and high-risk transport. Discretion. Precision. Loyalty.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#request">Request Protection</a>
+            <a class="btn btn-secondary" href="#services">View Services</a>
+            <a class="btn btn-secondary" id="emailHeroLink" href="#" target="_blank" rel="noopener">Join the Emails</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip reveal" aria-label="Company values">
+        <div><strong>Loyalty</strong><span>Client-first protection</span></div>
+        <div><strong>Precision</strong><span>Calculated response</span></div>
+        <div><strong>Discretion</strong><span>Quiet professionalism</span></div>
+        <div><strong>Trust</strong><span>Dependable coverage</span></div>
+      </section>
+
+      <section class="section two-column" id="services">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Operational Coverage</span>
+          <h2>Our Services</h2>
+          <p>Professional security options built around your location, risk level, and staffing needs.</p>
+        </div>
+        <div class="service-grid" id="servicesGrid"></div>
+      </section>
+
+      <section class="section split-panel" id="request">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Contract Terminal</span>
+          <h2>Request Protection</h2>
+          <p>Submit a contract request and receive a live estimate while you fill out the form.</p>
+        </div>
+        <div class="request-layout">
+          <form class="panel form-panel" id="contractForm">
+            <div class="form-grid" id="contractFields"></div>
+            <div class="form-group full-width">
+              <label>Operational Add-ons</label>
+              <div class="addon-checks" id="requestAddons"></div>
+            </div>
+            <button class="btn btn-primary full-width" type="submit">Submit Contract Request</button>
+            <div class="form-message" id="contractMessage" role="status"></div>
+          </form>
+
+          <aside class="panel estimate-panel" aria-live="polite">
+            <div class="terminal-title">Estimated Contract Cost</div>
+            <div class="estimate-lines" id="estimateLines"></div>
+            <div class="estimate-total">
+              <span>Total Estimate</span>
+              <strong id="estimateTotal">$0</strong>
+            </div>
+            <p class="small-note">Estimate only. Final price may change depending on risk, travel, staffing, equipment, ammunition, fuel, repairs, and contract conditions.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="roster">
+        <div class="section-heading reveal row-heading">
+          <div>
+            <span class="eyebrow">Active Personnel</span>
+            <h2>Our Roster</h2>
+            <p>Professional personnel available for business coverage, protection details, and contract work.</p>
+          </div>
+        </div>
+        <div class="roster-grid" id="rosterGrid"></div>
+      </section>
+
+      <section class="section split-panel" id="apply">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Recruitment Intake</span>
+          <h2>Join Black Rose</h2>
+          <p>Apply to join a team built on loyalty, precision, discretion, and trust.</p>
+        </div>
+        <form class="panel form-panel" id="applicationForm">
+          <div class="form-grid" id="applicationFields"></div>
+          <button class="btn btn-primary full-width" type="submit">Submit Application</button>
+          <div class="form-message" id="applicationMessage" role="status"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/icon.png" alt="Black Rose Protection icon" />
+        <div>
+          <strong>Black Rose Protection</strong>
+          <span>Protecting what matters, with precision and loyalty.</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#request">Request Protection</a>
+        <a href="#apply">Apply</a>
+        <a id="footerEmailLink" href="#" target="_blank" rel="noopener">Join the Emails</a>
+        <a href="admin.html">Staff Login</a>
+      </div>
+      <p class="footer-bottom">© <span id="year"></span> Black Rose Protection. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
