@@ -12,68 +12,321 @@ const STORAGE_ADMIN_AUTH = "brp_admin_authenticated";
 
 /* === BLACK ROSE DEFAULT DATA START === */
 const DEFAULT_DATA = {
-  siteSettings: {
-    companyName: "Black Rose Protection",
-    tagline: "Protecting what matters, with precision and loyalty.",
-    owner: "Roxy Rose",
-    intro: "Elite private protection and security solutions for individuals, businesses, events, and high-risk transport. Discretion. Precision. Loyalty.",
-    phone: "5206548088",
-    website: "blackroseprotection.site",
-    emailInviteUrl: "https://discord.gg/5hyT2CcJCD"
+  "siteSettings": {
+    "companyName": "Black Rose Protection",
+    "tagline": "Protecting what matters, with precision and loyalty.",
+    "owner": "Roxy Rose",
+    "intro": "Elite private protection and security solutions for individuals, businesses, events, and high-risk transport. Discretion. Precision. Loyalty.",
+    "phone": "5206548088",
+    "website": "blackroseprotection.site",
+    "emailInviteUrl": "https://discord.gg/5hyT2CcJCD"
   },
-  services: [
-    { id: "personal-protection", icon: "🛡️", name: "Personal Protection", description: "Executive and private protection tailored to your lifestyle, movement, and risk profile.", startingPrice: "Calculated by contract", active: true },
-    { id: "business-security", icon: "🏢", name: "Business Security", description: "Reliable on-site presence for businesses, properties, staff, customers, and assets.", startingPrice: "Calculated by contract", active: true },
-    { id: "event-protection", icon: "🎟️", name: "Event Protection", description: "Professional security for events, parties, openings, gatherings, and private venues.", startingPrice: "Calculated by contract", active: true },
-    { id: "high-risk-transport", icon: "🚚", name: "High-Risk Transport", description: "Secure movement for valuable cargo, clients, assets, or sensitive situations.", startingPrice: "Calculated by contract", active: true },
-    { id: "patrol-coverage", icon: "📍", name: "Patrol Coverage", description: "Visible deterrence, area monitoring, and rapid response for assigned locations.", startingPrice: "Calculated by contract", active: true }
+  "services": [
+    {
+      "id": "personal-protection",
+      "icon": "🛡️",
+      "name": "Personal Protection",
+      "description": "Executive and private protection tailored to your lifestyle, movement, and risk profile.",
+      "startingPrice": "Calculated by contract",
+      "active": true
+    },
+    {
+      "id": "business-security",
+      "icon": "🏢",
+      "name": "Business Security",
+      "description": "Reliable on-site presence for businesses, properties, staff, customers, and assets.",
+      "startingPrice": "Calculated by contract",
+      "active": true
+    },
+    {
+      "id": "event-protection",
+      "icon": "🎟️",
+      "name": "Event Protection",
+      "description": "Professional security for events, parties, openings, gatherings, and private venues.",
+      "startingPrice": "Calculated by contract",
+      "active": true
+    },
+    {
+      "id": "high-risk-transport",
+      "icon": "🚚",
+      "name": "High-Risk Transport",
+      "description": "Secure movement for valuable cargo, clients, assets, or sensitive situations.",
+      "startingPrice": "Calculated by contract",
+      "active": true
+    },
+    {
+      "id": "patrol-coverage",
+      "icon": "📍",
+      "name": "Patrol Coverage",
+      "description": "Visible deterrence, area monitoring, and rapid response for assigned locations.",
+      "startingPrice": "Calculated by contract",
+      "active": true
+    }
   ],
-  addons: [
-    { id: "convoy-support", name: "Second Vehicle / Convoy Support", description: "Additional vehicle coverage for movement or escort work.", price: 100000, priceType: "flat", active: true },
-    { id: "emergency-callout", name: "Emergency Same-Day Callout", description: "Priority response for urgent contract requests.", price: 150000, priceType: "flat", active: true },
-    { id: "armed-detail", name: "Armed / High-Risk Detail", description: "Additional risk planning and readiness for dangerous details.", price: 150000, priceType: "flat", active: true },
-    { id: "out-of-city", name: "Out-of-City Travel", description: "Coverage for contracts outside normal local operating areas.", price: 75000, priceType: "flat", active: true },
-    { id: "equipment-loadout", name: "Extended Equipment Loadout", description: "Extra equipment and preparation for specialised work.", price: 50000, priceType: "flat", active: true },
-    { id: "priority-handling", name: "Priority Contract Handling", description: "Expedited scheduling and priority contract review.", price: 100000, priceType: "flat", active: true }
+  "addons": [
+    {
+      "id": "convoy-support",
+      "name": "Second Vehicle / Convoy Support",
+      "description": "Additional vehicle coverage for movement or escort work.",
+      "price": 100000,
+      "priceType": "flat",
+      "active": true
+    },
+    {
+      "id": "emergency-callout",
+      "name": "Emergency Same-Day Callout",
+      "description": "Priority response for urgent contract requests.",
+      "price": 150000,
+      "priceType": "flat",
+      "active": true
+    },
+    {
+      "id": "armed-detail",
+      "name": "Armed / High-Risk Detail",
+      "description": "Additional risk planning and readiness for dangerous details.",
+      "price": 150000,
+      "priceType": "flat",
+      "active": true
+    },
+    {
+      "id": "out-of-city",
+      "name": "Out-of-City Travel",
+      "description": "Coverage for contracts outside normal local operating areas.",
+      "price": 75000,
+      "priceType": "flat",
+      "active": true
+    },
+    {
+      "id": "equipment-loadout",
+      "name": "Extended Equipment Loadout",
+      "description": "Extra equipment and preparation for specialised work.",
+      "price": 50000,
+      "priceType": "flat",
+      "active": true
+    },
+    {
+      "id": "priority-handling",
+      "name": "Priority Contract Handling",
+      "description": "Expedited scheduling and priority contract review.",
+      "price": 100000,
+      "priceType": "flat",
+      "active": true
+    }
   ],
-  roster: [
-    { id: "roxy-rose", name: "Roxy Rose", rank: "Chief Executive Officer", status: "Available", specialty: "Company Leadership", bio: "Founder of Black Rose Protection. Focused on loyalty, discretion, and professional contract coverage.", imageUrl: "", publicVisible: true, bookable: true, active: true },
-    { id: "jimmy-egan", name: "Jimmy Egan", rank: "Senior Protection Officer", status: "Available", specialty: "Close Protection", bio: "Trusted protection officer experienced in client movement, business coverage, and field support.", imageUrl: "", publicVisible: true, bookable: true, active: true },
-    { id: "rose-unit", name: "Rose Unit", rank: "Security Officer", status: "On Duty", specialty: "General Security", bio: "Operational security personnel assigned to patrols, events, and standard protection contracts.", imageUrl: "", publicVisible: true, bookable: true, active: true },
-    { id: "open-position", name: "Open Position", rank: "Recruit", status: "In Training", specialty: "Recruitment", bio: "Black Rose Protection is accepting applications for motivated and professional applicants.", imageUrl: "", publicVisible: true, bookable: false, active: true }
+  "roster": [
+    {
+      "id": "roxy-rose",
+      "name": "Roxy Rose",
+      "rank": "Chief Executive Officer",
+      "status": "Available",
+      "specialty": "Company Leadership",
+      "bio": "Founder of Black Rose Protection. Focused on loyalty, discretion, and professional contract coverage.",
+      "imageUrl": "",
+      "publicVisible": true,
+      "bookable": true,
+      "active": true
+    },
+    {
+      "id": "jimmy-egan",
+      "name": "Jimmy Egan",
+      "rank": "Chief Operating Officer",
+      "status": "Available",
+      "specialty": "Close Protection",
+      "bio": "Trusted protection officer experienced in client movement, business coverage, and field support.",
+      "imageUrl": "",
+      "publicVisible": true,
+      "bookable": true,
+      "active": true
+    },
+    {
+      "id": "open-position",
+      "name": "Open Position",
+      "rank": "Recruit",
+      "status": "In Training",
+      "specialty": "Recruitment",
+      "bio": "Black Rose Protection is accepting applications for motivated and professional applicants.",
+      "imageUrl": "",
+      "publicVisible": true,
+      "bookable": false,
+      "active": true
+    }
   ],
-  costSettings: {
-    baseOperationFee: 50000,
-    employeeHourlyRate: 75000,
-    minimumHours: 1,
-    durationStep: 0.5,
-    riskFees: { Low: 0, Medium: 50000, High: 150000, Unknown: 75000 }
+  "costSettings": {
+    "baseOperationFee": 50000,
+    "employeeHourlyRate": 75000,
+    "minimumHours": 1,
+    "durationStep": 0.5,
+    "riskFees": {
+      "Low": 0,
+      "Medium": 50000,
+      "High": 150000,
+      "Unknown": 75000
+    }
   },
-  contractQuestions: [
-    { id: "fullName", label: "Full Name", type: "text", required: true },
-    { id: "phone", label: "Phone Number", type: "tel", required: true },
-    { id: "businessName", label: "Business / Organisation Name", type: "text", required: false },
-    { id: "serviceNeeded", label: "Service Needed", type: "select", required: true, options: ["Personal Protection", "Business Security", "Event Protection", "High-Risk Transport", "Patrol Coverage", "Other"] },
-    { id: "dateNeeded", label: "Date Needed", type: "date", required: true },
-    { id: "timeNeeded", label: "Time Needed", type: "time", required: true },
-    { id: "location", label: "Location", type: "text", required: true },
-    { id: "duration", label: "Expected Duration (Hours)", type: "number", required: true },
-    { id: "employeeCount", label: "Employees Requested", type: "employee-select", required: true },
-    { id: "riskLevel", label: "Risk Level", type: "select", required: true, options: ["Low", "Medium", "High", "Unknown"] },
-    { id: "vehicleSupport", label: "Vehicle Support Needed", type: "select", required: true, options: ["No", "Yes", "Unsure"] },
-    { id: "extraDetails", label: "Extra Details", type: "textarea", required: false },
-    { id: "contactPreference", label: "Contact Preference", type: "select", required: true, options: ["Phone", "Emails", "In Person"] }
+  "contractQuestions": [
+    {
+      "id": "fullName",
+      "label": "Full Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "phone",
+      "label": "Phone Number",
+      "type": "tel",
+      "required": true
+    },
+    {
+      "id": "businessName",
+      "label": "Business / Organisation Name",
+      "type": "text",
+      "required": false
+    },
+    {
+      "id": "serviceNeeded",
+      "label": "Service Needed",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Personal Protection",
+        "Business Security",
+        "Event Protection",
+        "High-Risk Transport",
+        "Patrol Coverage",
+        "Other"
+      ]
+    },
+    {
+      "id": "dateNeeded",
+      "label": "Date Needed",
+      "type": "date",
+      "required": true
+    },
+    {
+      "id": "timeNeeded",
+      "label": "Time Needed",
+      "type": "time",
+      "required": true
+    },
+    {
+      "id": "location",
+      "label": "Location",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "duration",
+      "label": "Expected Duration (Hours)",
+      "type": "number",
+      "required": true
+    },
+    {
+      "id": "employeeCount",
+      "label": "Employees Requested",
+      "type": "employee-select",
+      "required": true
+    },
+    {
+      "id": "riskLevel",
+      "label": "Risk Level",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Low",
+        "Medium",
+        "High",
+        "Unknown"
+      ]
+    },
+    {
+      "id": "vehicleSupport",
+      "label": "Vehicle Support Needed",
+      "type": "select",
+      "required": true,
+      "options": [
+        "No",
+        "Yes",
+        "Unsure"
+      ]
+    },
+    {
+      "id": "extraDetails",
+      "label": "Extra Details",
+      "type": "textarea",
+      "required": false
+    },
+    {
+      "id": "contactPreference",
+      "label": "Contact Preference",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Phone",
+        "Emails",
+        "In Person"
+      ]
+    }
   ],
-  applicationQuestions: [
-    { id: "applicantName", label: "Name", type: "text", required: true },
-    { id: "phone", label: "Phone Number", type: "tel", required: true },
-    { id: "previousExperience", label: "Previous Experience", type: "textarea", required: true },
-    { id: "reasonForJoining", label: "Why do you want to join Black Rose Protection?", type: "textarea", required: true },
-    { id: "availability", label: "Availability", type: "text", required: true },
-    { id: "strengths", label: "Strengths", type: "textarea", required: true },
-    { id: "weaknesses", label: "Weaknesses", type: "textarea", required: false },
-    { id: "preferredRole", label: "Preferred Role", type: "text", required: false },
-    { id: "highRiskComfort", label: "Comfortable With High-Risk Protection Work?", type: "select", required: true, options: ["Yes", "No", "Unsure"] }
+  "applicationQuestions": [
+    {
+      "id": "applicantName",
+      "label": "Name",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "phone",
+      "label": "Phone Number",
+      "type": "tel",
+      "required": true
+    },
+    {
+      "id": "previousExperience",
+      "label": "Previous Experience",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "id": "reasonForJoining",
+      "label": "Why do you want to join Black Rose Protection?",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "id": "availability",
+      "label": "Availability",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "strengths",
+      "label": "Strengths",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "id": "weaknesses",
+      "label": "Weaknesses",
+      "type": "textarea",
+      "required": false
+    },
+    {
+      "id": "preferredRole",
+      "label": "Preferred Role",
+      "type": "text",
+      "required": false
+    },
+    {
+      "id": "highRiskComfort",
+      "label": "Comfortable With High-Risk Protection Work?",
+      "type": "select",
+      "required": true,
+      "options": [
+        "Yes",
+        "No",
+        "Unsure"
+      ]
+    }
   ]
 };
 /* === BLACK ROSE DEFAULT DATA END === */
