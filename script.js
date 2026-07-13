@@ -34,8 +34,8 @@ const DEFAULT_DATA = {
       "id": "business-security",
       "icon": "🏢",
       "name": "Business Security",
-      "description": "Reliable on-site presence for businesses, properties, staff, customers, and assets.",
-      "startingPrice": "Calculated by contract",
+      "description": "Business Security covers businesses and properties that want Black Rose Protection present when they are open, active, or needing extra peace of mind. Business Security is not 24/7 protection. Coverage is provided during agreed business openings, patrol checks, and when Black Rose staff are available.\n\nIncludes:\n\nPriority business support\nSecurity presence when staff are available\nStaff/customer safety support\nProperty and entrance monitoring\nIncident support when needed",
+      "startingPrice": "$650,000 / Week",
       "active": true
     },
     {
@@ -57,9 +57,9 @@ const DEFAULT_DATA = {
     {
       "id": "patrol-coverage",
       "icon": "📍",
-      "name": "Patrol Coverage",
-      "description": "Visible deterrence, area monitoring, and rapid response for assigned locations.",
-      "startingPrice": "Calculated by contract",
+      "name": "Private Escort Service",
+      "description": "A professional point-to-point driver service for clients who need safe transport from one location to another. Ideal for business owners, employees, late-night travel, or anyone wanting a trusted ride without booking a full protection detail.",
+      "startingPrice": "$40,000 - $125,000",
       "active": true
     }
   ],
