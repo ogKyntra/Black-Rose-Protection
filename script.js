@@ -95,22 +95,6 @@ const DEFAULT_DATA = {
       "price": 75000,
       "priceType": "flat",
       "active": true
-    },
-    {
-      "id": "equipment-loadout",
-      "name": "Extended Equipment Loadout",
-      "description": "Extra equipment and preparation for specialised work.",
-      "price": 50000,
-      "priceType": "flat",
-      "active": true
-    },
-    {
-      "id": "priority-handling",
-      "name": "Priority Contract Handling",
-      "description": "Expedited scheduling and priority contract review.",
-      "price": 100000,
-      "priceType": "flat",
-      "active": true
     }
   ],
   "roster": [
